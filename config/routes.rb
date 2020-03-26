@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get 'users/create'
-  get 'users/new'
-  get 'articles/create'
-  get 'articles/new'
+  #get 'users/create'
+  #get 'users/new'
+  #get 'articles/create'
+  #get 'articles/new'
   #get 'users/new'
   #get 'posts/show'
   #get 'sessions/new'
@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   get    '/signup',   to: 'users#new'
   post '/signup' => 'users#create'
   get '/logout',  to: 'sessions#destroy'
-  get '/add_comment' => 'posts#new'
-  post '/add_comment' => 'posts#create'
+  get '/add_article' => 'articles#new'
+  post '/add_article' => 'articless#create'
 end

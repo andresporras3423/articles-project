@@ -29,5 +29,4 @@ class User < ApplicationRecord
       crypt_token = Digest::SHA1.hexdigest token.to_s
       self.remember_token = crypt_token
     end
-  end
 end
