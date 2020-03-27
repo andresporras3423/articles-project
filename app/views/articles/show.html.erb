@@ -16,3 +16,8 @@
 </tr>
 <%end%>
 </table>
+<%if @article.voters.include?(current_user)%>
+<%= link_to "unvote", "/show_article?id=#{@article.id}&vote=0" %>
+<%else%>
+<%= link_to "vote", "/show_article?id=#{@article.id}&vote=1" %>
+<%end%>

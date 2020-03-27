@@ -39,7 +39,12 @@ class ArticlesController < ApplicationController
 
   def show
     @article=Article.find(params[:id])
-    
+    if params[:vote]=='1'
+      vote = Vote.new(user_id: current_user.id, article_id: @article.id)
+      vote.save
+    elsif params[:vote]=='0'
+      Vote.destroy(@article.votes.first{|v| v.user_id==current_user.id}.id)
+    end
   end
 
   def article_params

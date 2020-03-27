@@ -1,5 +1,7 @@
 class User < ApplicationRecord
     has_many :articles
+    has_many :votes
+    has_many :voteds, :through => :votes, source: :articles
     before_validation :record_signup, on: :create
     # before_create :record_signup
     before_save { self.email = email.downcase }
