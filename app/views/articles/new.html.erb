@@ -1,2 +1,8 @@
-<h1>Articles#new</h1>
-<p>Find me in app/views/articles/new.html.erb</p>
+<p><%= flash[:danger] %></p>
+
+<%= form_tag '/add_article', multipart: true do %>
+  title: <%= text_field_tag :title %>
+  content: <%= text_area_tag :text, '', rows: 10, cols: 25 %> 
+  image: <%= file_field_tag :image, multiple: true %>
+  <%= submit_tag "Submit" %>
+<% end %>

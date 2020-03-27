@@ -22,6 +22,14 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'carrierwave',             '1.2.2'
+gem 'mini_magick',             '4.7.0'
+
+group :production do
+  # gem 'pg',  '0.20.0'
+  gem 'fog', '1.42'
+end
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
