@@ -3,3 +3,16 @@
 <%= image_tag(@article.image, style:"width:100%") if @article.image.attached?%>
 </div>
 <p><%=@article.text%></p>
+
+<table>
+<tr>
+    <th>categories</th>
+</tr>
+<%@article.categories.each do |category|%>
+<tr>
+<td>
+<%=category.name%>
+</td>
+</tr>
+<%end%>
+</table>

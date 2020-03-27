@@ -3252,3 +3252,562 @@ Processing by ArticlesController#show as HTML
 Completed 200 OK in 32ms (Views: 20.4ms | ActiveRecord: 1.2ms | Allocations: 6110)
 
 
+Started GET "/show_article?id=15" for ::1 at 2020-03-27 10:41:51 -0500
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--96188dfada63edc42a1a17816915d9e7bb485612/bogota-night.jpg" for ::1 at 2020-03-27 10:41:51 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ActiveStorage::BlobsController#show as JPEG
+Processing by ArticlesController#show as HTML
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--96188dfada63edc42a1a17816915d9e7bb485612", "filename"=>"bogota-night"}
+  Parameters: {"id"=>"15"}
+  [1m[36mActiveStorage::Blob Load (11.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (16.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+[36m  Disk Storage (36.2ms) [0m[34mGenerated URL for file at key: wklfhas8bx2n63v5ze852tgnw61n (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkMnRzWm1oaGN6aGllREp1TmpOMk5YcGxPRFV5ZEdkdWR6WXhiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KdloyOTBZUzF1YVdkb2RDNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdloyOTBZUzF1YVdkb2RDNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wMy0yN1QxNTo0Njo1MS42NDVaIiwicHVyIjoiYmxvYl9rZXkifX0=--38dc7126375f5a318db9b8c177ad5f20041ab7dc/bogota-night.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bogota-night.jpg%22%3B+filename%2A%3DUTF-8%27%27bogota-night.jpg)[0m
+  ↳ app/controllers/articles_controller.rb:41:in `show'
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkMnRzWm1oaGN6aGllREp1TmpOMk5YcGxPRFV5ZEdkdWR6WXhiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KdloyOTBZUzF1YVdkb2RDNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdloyOTBZUzF1YVdkb2RDNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wMy0yN1QxNTo0Njo1MS42NDVaIiwicHVyIjoiYmxvYl9rZXkifX0=--38dc7126375f5a318db9b8c177ad5f20041ab7dc/bogota-night.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bogota-night.jpg%22%3B+filename%2A%3DUTF-8%27%27bogota-night.jpg
+  Rendering articles/show.html.erb within layouts/application
+Completed 302 Found in 200ms (ActiveRecord: 11.9ms | Allocations: 2750)
+
+
+  [1m[36mActiveStorage::Attachment Load (1.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 15], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  Rendered articles/show.html.erb within layouts/application (Duration: 26.8ms | Allocations: 2281)
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkMnRzWm1oaGN6aGllREp1TmpOMk5YcGxPRFV5ZEdkdWR6WXhiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KdloyOTBZUzF1YVdkb2RDNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdloyOTBZUzF1YVdkb2RDNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wMy0yN1QxNTo0Njo1MS42NDVaIiwicHVyIjoiYmxvYl9rZXkifX0=--38dc7126375f5a318db9b8c177ad5f20041ab7dc/bogota-night.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bogota-night.jpg%22%3B+filename%2A%3DUTF-8%27%27bogota-night.jpg" for ::1 at 2020-03-27 10:41:51 -0500
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"bogota-night.jpg\"; filename*=UTF-8''bogota-night.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkMnRzWm1oaGN6aGllREp1TmpOMk5YcGxPRFV5ZEdkdWR6WXhiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KdloyOTBZUzF1YVdkb2RDNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdloyOTBZUzF1YVdkb2RDNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wMy0yN1QxNTo0Njo1MS42NDVaIiwicHVyIjoiYmxvYl9rZXkifX0=--38dc7126375f5a318db9b8c177ad5f20041ab7dc", "filename"=>"bogota-night"}
+Completed 200 OK in 33ms (ActiveRecord: 0.0ms | Allocations: 419)
+
+
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (33.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+Completed 200 OK in 498ms (Views: 388.4ms | ActiveRecord: 51.4ms | Allocations: 11306)
+
+
+Started GET "/" for ::1 at 2020-03-27 10:41:54 -0500
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1289)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+Completed 200 OK in 15ms (Views: 13.4ms | ActiveRecord: 0.5ms | Allocations: 5900)
+
+
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCategories (20200327163316)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "priority" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200327163316"]]
+  [1m[35m (127.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateArticleCategories (20200327163621)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "article_categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "article_id" varchar, "category_id" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200327163621"]]
+  [1m[35m (176.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to UpdateColumns (20200327164311)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to UpdateColumns (20200327164311)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to UpdateColumns (20200327164311)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aarticle_categories" ("id" integer NOT NULL PRIMARY KEY, "article_id" varchar DEFAULT NULL, "category_id" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aarticle_categories" ("id","article_id","category_id","created_at","updated_at")
+                     SELECT "id","article_id","category_id","created_at","updated_at" FROM "article_categories"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "article_categories"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to UpdateColumns (20200327164311)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aarticle_categories" ("id" integer NOT NULL PRIMARY KEY, "article_id" varchar DEFAULT NULL, "category_id" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aarticle_categories" ("id","article_id","category_id","created_at","updated_at")
+                     SELECT "id","article_id","category_id","created_at","updated_at" FROM "article_categories"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "article_categories"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "article_categories" ("id" integer NOT NULL PRIMARY KEY, "article_id" integer DEFAULT NULL, "category_id" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "article_categories" ("id","article_id","category_id","created_at","updated_at")
+                     SELECT "id","article_id","category_id","created_at","updated_at" FROM "aarticle_categories"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aarticle_categories"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aarticle_categories" ("id" integer NOT NULL PRIMARY KEY, "article_id" integer DEFAULT NULL, "category_id" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aarticle_categories" ("id","article_id","category_id","created_at","updated_at")
+                     SELECT "id","article_id","category_id","created_at","updated_at" FROM "article_categories"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "article_categories"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "article_categories" ("id" integer NOT NULL PRIMARY KEY, "article_id" integer DEFAULT NULL, "category_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "article_categories" ("id","article_id","category_id","created_at","updated_at")
+                     SELECT "id","article_id","category_id","created_at","updated_at" FROM "aarticle_categories"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aarticle_categories"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acategories" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "priority" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "acategories" ("id","name","priority","created_at","updated_at")
+                     SELECT "id","name","priority","created_at","updated_at" FROM "categories"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "categories"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "priority" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("id","name","priority","created_at","updated_at")
+                     SELECT "id","name","priority","created_at","updated_at" FROM "acategories"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "acategories"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200327164311"]]
+  [1m[35m (84.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (3.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "priority", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "health"], ["priority", 1], ["created_at", "2020-03-27 16:52:46.618073"], ["updated_at", "2020-03-27 16:52:46.618073"]]
+  [1m[35m (86.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (1.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "priority", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "technology"], ["priority", 2], ["created_at", "2020-03-27 16:54:45.449180"], ["updated_at", "2020-03-27 16:54:45.449180"]]
+  [1m[35m (175.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArticleCategory Create (2.5ms)[0m  [1m[32mINSERT INTO "article_categories" ("article_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["article_id", 15], ["category_id", 1], ["created_at", "2020-03-27 16:56:19.695892"], ["updated_at", "2020-03-27 16:56:19.695892"]]
+  [1m[35m (80.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArticleCategory Create (3.0ms)[0m  [1m[32mINSERT INTO "article_categories" ("article_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["article_id", 15], ["category_id", 2], ["created_at", "2020-03-27 16:56:32.000065"], ["updated_at", "2020-03-27 16:56:32.000065"]]
+  [1m[35m (110.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mArticleCategory Load (0.6ms)[0m  [1m[34mSELECT "article_categories".* FROM "article_categories" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/show_article?id=15" for ::1 at 2020-03-27 12:00:05 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:41:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 15], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  Rendered articles/show.html.erb within layouts/application (Duration: 167.1ms | Allocations: 19003)
+Completed 500 Internal Server Error in 205ms (ActiveRecord: 1.5ms | Allocations: 27383)
+
+
+  
+ActionView::Template::Error (Could not find the source association(s) "category" or :categories in model ArticleCategory. Try 'has_many :categories, :through => :article_categories, :source => <name>'. Is it one of ?):
+     8: <tr>
+     9:     <th>categories</th>
+    10: </tr>
+    11: <%@article.categories.each do |category|%>
+    12: <tr>
+    13: <%=category.name%>
+    14: </tr>
+  
+app/views/articles/show.html.erb:11
+Started GET "/show_article?id=15" for ::1 at 2020-03-27 12:01:32 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:41:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 15], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  Rendered articles/show.html.erb within layouts/application (Duration: 22.9ms | Allocations: 16773)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 3.3ms | Allocations: 25023)
+
+
+  
+ActionView::Template::Error (Could not find the source association(s) "category" or :categories in model ArticleCategory. Try 'has_many :categories, :through => :article_categories, :source => <name>'. Is it one of ?):
+     8: <tr>
+     9:     <th>categories</th>
+    10: </tr>
+    11: <%@article.categories.each do |category|%>
+    12: <tr>
+    13: <%=category.name%>
+    14: </tr>
+  
+app/views/articles/show.html.erb:11
+Started GET "/" for ::1 at 2020-03-27 12:01:41 -0500
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  Rendered articles/index.html.erb within layouts/application (Duration: 40.5ms | Allocations: 7648)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+Completed 200 OK in 68ms (Views: 64.9ms | ActiveRecord: 1.5ms | Allocations: 12729)
+
+
+Started GET "/show_article?id=13" for ::1 at 2020-03-27 12:01:44 -0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:41:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 13], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  Rendered articles/show.html.erb within layouts/application (Duration: 9.4ms | Allocations: 1915)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.5ms | Allocations: 2913)
+
+
+  
+ActionView::Template::Error (Could not find the source association(s) "category" or :categories in model ArticleCategory. Try 'has_many :categories, :through => :article_categories, :source => <name>'. Is it one of ?):
+     8: <tr>
+     9:     <th>categories</th>
+    10: </tr>
+    11: <%@article.categories.each do |category|%>
+    12: <tr>
+    13: <%=category.name%>
+    14: </tr>
+  
+app/views/articles/show.html.erb:11
+Started GET "/" for ::1 at 2020-03-27 12:01:48 -0500
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1269)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.4ms | Allocations: 5876)
+
+
+Started GET "/show_article?id=15" for ::1 at 2020-03-27 12:01:49 -0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:41:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (1.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 15], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  Rendered articles/show.html.erb within layouts/application (Duration: 12.3ms | Allocations: 2888)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 2.4ms | Allocations: 3883)
+
+
+  
+ActionView::Template::Error (Could not find the source association(s) "category" or :categories in model ArticleCategory. Try 'has_many :categories, :through => :article_categories, :source => <name>'. Is it one of ?):
+     8: <tr>
+     9:     <th>categories</th>
+    10: </tr>
+    11: <%@article.categories.each do |category|%>
+    12: <tr>
+    13: <%=category.name%>
+    14: </tr>
+  
+app/views/articles/show.html.erb:11
+Started GET "/show_article?id=15" for ::1 at 2020-03-27 12:02:32 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:41:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 15], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  Rendered articles/show.html.erb within layouts/application (Duration: 28.6ms | Allocations: 18064)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 3.4ms | Allocations: 26191)
+
+
+  
+SyntaxError (/home/oscarrussi/Documents/microverse/rails/articles-project/app/models/category.rb:3: syntax error, unexpected =>
+...has_many :articles, through: => :article_categories
+...                             ^~):
+  
+app/models/category.rb:3: syntax error, unexpected =>
+app/models/category.rb:3: syntax error, unexpected =>
+app/models/category.rb:3: syntax error, unexpected =>
+app/views/articles/show.html.erb:11
+Started GET "/show_article?id=15" for ::1 at 2020-03-27 12:04:12 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:41:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 15], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = ?[0m  [["article_id", 15]]
+  ↳ app/views/articles/show.html.erb:11
+  Rendered articles/show.html.erb within layouts/application (Duration: 49.3ms | Allocations: 23941)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+Completed 200 OK in 80ms (Views: 62.4ms | ActiveRecord: 5.0ms | Allocations: 42288)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--96188dfada63edc42a1a17816915d9e7bb485612/bogota-night.jpg" for ::1 at 2020-03-27 12:04:13 -0500
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--96188dfada63edc42a1a17816915d9e7bb485612", "filename"=>"bogota-night"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: wklfhas8bx2n63v5ze852tgnw61n (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkMnRzWm1oaGN6aGllREp1TmpOMk5YcGxPRFV5ZEdkdWR6WXhiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KdloyOTBZUzF1YVdkb2RDNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdloyOTBZUzF1YVdkb2RDNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wMy0yN1QxNzowOToxMy4xOTZaIiwicHVyIjoiYmxvYl9rZXkifX0=--a87b3a0e2c9a28bcd3a18bd0738fb75f5aa70ade/bogota-night.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bogota-night.jpg%22%3B+filename%2A%3DUTF-8%27%27bogota-night.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkMnRzWm1oaGN6aGllREp1TmpOMk5YcGxPRFV5ZEdkdWR6WXhiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KdloyOTBZUzF1YVdkb2RDNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdloyOTBZUzF1YVdkb2RDNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wMy0yN1QxNzowOToxMy4xOTZaIiwicHVyIjoiYmxvYl9rZXkifX0=--a87b3a0e2c9a28bcd3a18bd0738fb75f5aa70ade/bogota-night.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bogota-night.jpg%22%3B+filename%2A%3DUTF-8%27%27bogota-night.jpg
+Completed 302 Found in 7ms (ActiveRecord: 0.1ms | Allocations: 2099)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkMnRzWm1oaGN6aGllREp1TmpOMk5YcGxPRFV5ZEdkdWR6WXhiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KdloyOTBZUzF1YVdkb2RDNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdloyOTBZUzF1YVdkb2RDNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wMy0yN1QxNzowOToxMy4xOTZaIiwicHVyIjoiYmxvYl9rZXkifX0=--a87b3a0e2c9a28bcd3a18bd0738fb75f5aa70ade/bogota-night.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bogota-night.jpg%22%3B+filename%2A%3DUTF-8%27%27bogota-night.jpg" for ::1 at 2020-03-27 12:04:13 -0500
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"bogota-night.jpg\"; filename*=UTF-8''bogota-night.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkMnRzWm1oaGN6aGllREp1TmpOMk5YcGxPRFV5ZEdkdWR6WXhiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KdloyOTBZUzF1YVdkb2RDNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdloyOTBZUzF1YVdkb2RDNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wMy0yN1QxNzowOToxMy4xOTZaIiwicHVyIjoiYmxvYl9rZXkifX0=--a87b3a0e2c9a28bcd3a18bd0738fb75f5aa70ade", "filename"=>"bogota-night"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 459)
+
+
+Started GET "/show_article?id=15" for ::1 at 2020-03-27 12:04:27 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"15"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1259)
+
+
+  
+SyntaxError (/home/oscarrussi/Documents/microverse/rails/articles-project/app/models/article.rb:5: syntax error, unexpected ':', expecting end
+...as_many :categories, :through :article_categories
+...                              ^):
+  
+app/models/article.rb:5: syntax error, unexpected ':', expecting end
+app/models/article.rb:5: syntax error, unexpected ':', expecting end
+app/models/article.rb:5: syntax error, unexpected ':', expecting end
+app/controllers/articles_controller.rb:41:in `show'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mArticleCategory Load (0.2ms)[0m  [1m[34mSELECT "article_categories".* FROM "article_categories" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = ? LIMIT ?[0m  [["article_id", 15], ["LIMIT", 11]]
+Started GET "/" for ::1 at 2020-03-27 12:06:10 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  Rendered articles/index.html.erb within layouts/application (Duration: 73.1ms | Allocations: 12994)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+Completed 200 OK in 422ms (Views: 385.0ms | ActiveRecord: 4.5ms | Allocations: 25339)
+
+
+Started GET "/show_article?id=15" for ::1 at 2020-03-27 12:06:14 -0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:41:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 15], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = ?[0m  [["article_id", 15]]
+  ↳ app/views/articles/show.html.erb:11
+  Rendered articles/show.html.erb within layouts/application (Duration: 199.8ms | Allocations: 30012)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+Completed 200 OK in 230ms (Views: 214.2ms | ActiveRecord: 4.9ms | Allocations: 35384)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkMnRzWm1oaGN6aGllREp1TmpOMk5YcGxPRFV5ZEdkdWR6WXhiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KdloyOTBZUzF1YVdkb2RDNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdloyOTBZUzF1YVdkb2RDNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wMy0yN1QxNzowOToxMy4xOTZaIiwicHVyIjoiYmxvYl9rZXkifX0=--a87b3a0e2c9a28bcd3a18bd0738fb75f5aa70ade/bogota-night.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bogota-night.jpg%22%3B+filename%2A%3DUTF-8%27%27bogota-night.jpg" for ::1 at 2020-03-27 12:06:14 -0500
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"bogota-night.jpg\"; filename*=UTF-8''bogota-night.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkMnRzWm1oaGN6aGllREp1TmpOMk5YcGxPRFV5ZEdkdWR6WXhiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KdloyOTBZUzF1YVdkb2RDNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdloyOTBZUzF1YVdkb2RDNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wMy0yN1QxNzowOToxMy4xOTZaIiwicHVyIjoiYmxvYl9rZXkifX0=--a87b3a0e2c9a28bcd3a18bd0738fb75f5aa70ade", "filename"=>"bogota-night"}
+Completed 304 Not Modified in 3ms (ActiveRecord: 0.0ms | Allocations: 531)
+
+
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = ? LIMIT ?[0m  [["article_id", 15], ["LIMIT", 11]]
+Started GET "/" for ::1 at 2020-03-27 12:08:27 -0500
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1479)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.4ms | Allocations: 7165)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkMnRzWm1oaGN6aGllREp1TmpOMk5YcGxPRFV5ZEdkdWR6WXhiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KdloyOTBZUzF1YVdkb2RDNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdloyOTBZUzF1YVdkb2RDNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wMy0yN1QxNzowOToxMy4xOTZaIiwicHVyIjoiYmxvYl9rZXkifX0=--a87b3a0e2c9a28bcd3a18bd0738fb75f5aa70ade/bogota-night.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bogota-night.jpg%22%3B+filename%2A%3DUTF-8%27%27bogota-night.jpg" for ::1 at 2020-03-27 12:08:27 -0500
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"bogota-night.jpg\"; filename*=UTF-8''bogota-night.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkMnRzWm1oaGN6aGllREp1TmpOMk5YcGxPRFV5ZEdkdWR6WXhiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KdloyOTBZUzF1YVdkb2RDNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdloyOTBZUzF1YVdkb2RDNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wMy0yN1QxNzowOToxMy4xOTZaIiwicHVyIjoiYmxvYl9rZXkifX0=--a87b3a0e2c9a28bcd3a18bd0738fb75f5aa70ade", "filename"=>"bogota-night"}
+Completed 304 Not Modified in 2ms (ActiveRecord: 0.0ms | Allocations: 413)
+
+
+Started GET "/" for ::1 at 2020-03-27 12:08:28 -0500
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  Rendered articles/index.html.erb within layouts/application (Duration: 7.9ms | Allocations: 1270)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+Completed 200 OK in 40ms (Views: 37.2ms | ActiveRecord: 0.6ms | Allocations: 5883)
+
+
+Started GET "/show_article?id=15" for ::1 at 2020-03-27 12:08:31 -0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:41:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 15], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = ?[0m  [["article_id", 15]]
+  ↳ app/views/articles/show.html.erb:12
+  Rendered articles/show.html.erb within layouts/application (Duration: 11.5ms | Allocations: 2994)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+Completed 200 OK in 24ms (Views: 20.3ms | ActiveRecord: 0.9ms | Allocations: 8329)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkMnRzWm1oaGN6aGllREp1TmpOMk5YcGxPRFV5ZEdkdWR6WXhiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KdloyOTBZUzF1YVdkb2RDNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdloyOTBZUzF1YVdkb2RDNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wMy0yN1QxNzowOToxMy4xOTZaIiwicHVyIjoiYmxvYl9rZXkifX0=--a87b3a0e2c9a28bcd3a18bd0738fb75f5aa70ade/bogota-night.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bogota-night.jpg%22%3B+filename%2A%3DUTF-8%27%27bogota-night.jpg" for ::1 at 2020-03-27 12:08:31 -0500
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"bogota-night.jpg\"; filename*=UTF-8''bogota-night.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkMnRzWm1oaGN6aGllREp1TmpOMk5YcGxPRFV5ZEdkdWR6WXhiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KdloyOTBZUzF1YVdkb2RDNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdloyOTBZUzF1YVdkb2RDNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wMy0yN1QxNzowOToxMy4xOTZaIiwicHVyIjoiYmxvYl9rZXkifX0=--a87b3a0e2c9a28bcd3a18bd0738fb75f5aa70ade", "filename"=>"bogota-night"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 412)
+
+
+Started GET "/show_article?id=15" for ::1 at 2020-03-27 12:09:20 -0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:41:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 15], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = ?[0m  [["article_id", 15]]
+  ↳ app/views/articles/show.html.erb:12
+  Rendered articles/show.html.erb within layouts/application (Duration: 10.1ms | Allocations: 2990)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+Completed 200 OK in 28ms (Views: 21.5ms | ActiveRecord: 1.3ms | Allocations: 9255)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--96188dfada63edc42a1a17816915d9e7bb485612/bogota-night.jpg" for ::1 at 2020-03-27 12:09:20 -0500
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--96188dfada63edc42a1a17816915d9e7bb485612", "filename"=>"bogota-night"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (83.7ms) [0m[34mGenerated URL for file at key: wklfhas8bx2n63v5ze852tgnw61n (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkMnRzWm1oaGN6aGllREp1TmpOMk5YcGxPRFV5ZEdkdWR6WXhiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KdloyOTBZUzF1YVdkb2RDNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdloyOTBZUzF1YVdkb2RDNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wMy0yN1QxNzoxNDoyMC42MDJaIiwicHVyIjoiYmxvYl9rZXkifX0=--b80e1c7d98255b77a829dc0cb890db5443decc4f/bogota-night.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bogota-night.jpg%22%3B+filename%2A%3DUTF-8%27%27bogota-night.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkMnRzWm1oaGN6aGllREp1TmpOMk5YcGxPRFV5ZEdkdWR6WXhiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KdloyOTBZUzF1YVdkb2RDNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdloyOTBZUzF1YVdkb2RDNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wMy0yN1QxNzoxNDoyMC42MDJaIiwicHVyIjoiYmxvYl9rZXkifX0=--b80e1c7d98255b77a829dc0cb890db5443decc4f/bogota-night.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bogota-night.jpg%22%3B+filename%2A%3DUTF-8%27%27bogota-night.jpg
+Completed 302 Found in 87ms (ActiveRecord: 0.1ms | Allocations: 3174)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkMnRzWm1oaGN6aGllREp1TmpOMk5YcGxPRFV5ZEdkdWR6WXhiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KdloyOTBZUzF1YVdkb2RDNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdloyOTBZUzF1YVdkb2RDNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wMy0yN1QxNzoxNDoyMC42MDJaIiwicHVyIjoiYmxvYl9rZXkifX0=--b80e1c7d98255b77a829dc0cb890db5443decc4f/bogota-night.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bogota-night.jpg%22%3B+filename%2A%3DUTF-8%27%27bogota-night.jpg" for ::1 at 2020-03-27 12:09:20 -0500
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"bogota-night.jpg\"; filename*=UTF-8''bogota-night.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkMnRzWm1oaGN6aGllREp1TmpOMk5YcGxPRFV5ZEdkdWR6WXhiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KdloyOTBZUzF1YVdkb2RDNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdloyOTBZUzF1YVdkb2RDNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wMy0yN1QxNzoxNDoyMC42MDJaIiwicHVyIjoiYmxvYl9rZXkifX0=--b80e1c7d98255b77a829dc0cb890db5443decc4f", "filename"=>"bogota-night"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 424)
+
+
+Started GET "/show_article?id=15" for ::1 at 2020-03-27 12:09:42 -0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:41:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 15], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = ?[0m  [["article_id", 15]]
+  ↳ app/views/articles/show.html.erb:11
+  Rendered articles/show.html.erb within layouts/application (Duration: 9.3ms | Allocations: 2982)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+Completed 200 OK in 23ms (Views: 19.1ms | ActiveRecord: 0.8ms | Allocations: 9228)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkMnRzWm1oaGN6aGllREp1TmpOMk5YcGxPRFV5ZEdkdWR6WXhiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KdloyOTBZUzF1YVdkb2RDNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdloyOTBZUzF1YVdkb2RDNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wMy0yN1QxNzoxNDoyMC42MDJaIiwicHVyIjoiYmxvYl9rZXkifX0=--b80e1c7d98255b77a829dc0cb890db5443decc4f/bogota-night.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bogota-night.jpg%22%3B+filename%2A%3DUTF-8%27%27bogota-night.jpg" for ::1 at 2020-03-27 12:09:43 -0500
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"bogota-night.jpg\"; filename*=UTF-8''bogota-night.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkMnRzWm1oaGN6aGllREp1TmpOMk5YcGxPRFV5ZEdkdWR6WXhiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KdloyOTBZUzF1YVdkb2RDNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdloyOTBZUzF1YVdkb2RDNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wMy0yN1QxNzoxNDoyMC42MDJaIiwicHVyIjoiYmxvYl9rZXkifX0=--b80e1c7d98255b77a829dc0cb890db5443decc4f", "filename"=>"bogota-night"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 413)
+
+
