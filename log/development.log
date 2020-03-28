@@ -4685,3 +4685,1071 @@ Processing by ArticlesController#show as HTML
 Completed 200 OK in 263ms (Views: 75.8ms | ActiveRecord: 157.7ms | Allocations: 15143)
 
 
+Started GET "/" for ::1 at 2020-03-27 17:47:37 -0500
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1301)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+Completed 200 OK in 35ms (Views: 33.3ms | ActiveRecord: 0.3ms | Allocations: 5910)
+
+
+Started GET "/show_article?id=16" for ::1 at 2020-03-27 17:47:39 -0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:41:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 16], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = ?[0m  [["article_id", 16]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "votes" ON "users"."id" = "votes"."user_id" WHERE "votes"."article_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["article_id", "16"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:19
+  Rendered articles/show.html.erb within layouts/application (Duration: 13.2ms | Allocations: 4293)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+Completed 200 OK in 23ms (Views: 20.4ms | ActiveRecord: 1.0ms | Allocations: 9406)
+
+
+Started GET "/" for ::1 at 2020-03-27 17:47:43 -0500
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1301)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.5ms | Allocations: 5909)
+
+
+Started GET "/logout" for ::1 at 2020-03-27 20:10:42 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (26.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 235ms (ActiveRecord: 26.0ms | Allocations: 1007)
+
+
+Started GET "/login" for ::1 at 2020-03-27 20:10:43 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 199)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 250ms (Views: 248.9ms | ActiveRecord: 0.0ms | Allocations: 4026)
+
+
+Started GET "/signup" for ::1 at 2020-03-27 20:10:46 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 255)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 4059)
+
+
+Started POST "/signup" for ::1 at 2020-03-27 20:11:18 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"Wb8B1QzpKD4bw6jM1t4pHlFMdhtQ2Dkr75I7ToJnGPohLO9oFfNJ9soVD7aye+CsiQvgC8emwZoJW1k1I4wbtw==", "name"=>"peque", "email"=>"p@p.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (12.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "peque"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "p@p.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Create (41.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "remember_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "peque"], ["email", "p@p.com"], ["password_digest", "$2a$12$7jk0LcNh2crSOKm4sogJGuYlR9Aat8qKY3DloIR/2KbhFR2FU06PG"], ["remember_token", "9da055a18738cd293e634c21d262a6c7d5ef2f91"], ["created_at", "2020-03-28 01:11:19.155695"], ["updated_at", "2020-03-28 01:11:19.155695"]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[35m (115.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? AND "users"."id" != ? LIMIT ?[0m  [["name", "peque"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND "users"."id" != ? LIMIT ?[0m  [["email", "p@p.com"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? AND "users"."id" != ? LIMIT ?[0m  [["name", "peque"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND "users"."id" != ? LIMIT ?[0m  [["email", "p@p.com"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 473ms (ActiveRecord: 171.3ms | Allocations: 9878)
+
+
+Started GET "/login" for ::1 at 2020-03-27 20:11:19 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.4ms | Allocations: 196)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 3859)
+
+
+Started POST "/login" for ::1 at 2020-03-27 20:11:32 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"+qayhYjfFrs6i1sMk1nxdZMHOBuSbgh2dHNmRr4UL8phtLWJZJDL+sB59EI4MQuVKnaekTKwS65WBZiJd1FfAw==", "name"=>"peque", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "peque"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 283ms (ActiveRecord: 0.4ms | Allocations: 1095)
+
+
+Started GET "/" for ::1 at 2020-03-27 20:11:33 -0500
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (17.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  Rendered articles/index.html.erb within layouts/application (Duration: 20.0ms | Allocations: 1321)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+Completed 200 OK in 27ms (Views: 9.2ms | ActiveRecord: 17.6ms | Allocations: 5928)
+
+
+Started GET "/add_article" for ::1 at 2020-03-27 20:11:38 -0500
+Processing by ArticlesController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 244)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+Completed 200 OK in 29ms (Views: 24.3ms | ActiveRecord: 0.6ms | Allocations: 5423)
+
+
+Started POST "/add_article" for ::1 at 2020-03-27 20:12:37 -0500
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"t6Hu/hj+TetBKLARLIJ+rOlDDlPfv9zl2cTv3V02UbKWM7RDsVgsWeu7hvAB6tCutEI5ej3sZh8cgqHLBh9kzw==", "title"=>"peque article", "text"=>"my name is the little", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fd2b811d3b0 @tempfile=#<Tempfile:/tmp/RackMultipart20200327-22381-19t990l.jpeg>, @original_filename="album1.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"album1.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "commit"=>"Submit"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:9:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:9:in `create'
+  [1m[36mArticle Create (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("user_id", "title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "3"], ["title", "peque article"], ["text", "my name is the little"], ["created_at", "2020-03-28 01:12:37.179500"], ["updated_at", "2020-03-28 01:12:37.179500"]]
+  ↳ app/controllers/articles_controller.rb:9:in `create'
+  [1m[36mActiveStorage::Blob Load (9.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 17], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:9:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 17], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:9:in `create'
+  [1m[36mActiveStorage::Blob Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "czyohry7en44qbajan0y52es7vu9"], ["filename", "album1.jpeg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 188428], ["checksum", "dX0uHcJo4/xd3/4ncJijjQ=="], ["created_at", "2020-03-28 01:12:37.215228"]]
+  ↳ app/controllers/articles_controller.rb:9:in `create'
+  [1m[36mActiveStorage::Attachment Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "image"], ["record_type", "Article"], ["record_id", 17], ["blob_id", 3], ["created_at", "2020-03-28 01:12:37.219614"]]
+  ↳ app/controllers/articles_controller.rb:9:in `create'
+  [1m[36mArticle Update (0.1ms)[0m  [1m[33mUPDATE "articles" SET "updated_at" = ? WHERE "articles"."id" = ?[0m  [["updated_at", "2020-03-28 01:12:37.221564"], ["id", 17]]
+  ↳ app/controllers/articles_controller.rb:9:in `create'
+  [1m[35m (128.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:9:in `create'
+[36m  Disk Storage (37.4ms) [0m[32mUploaded file to key: czyohry7en44qbajan0y52es7vu9 (checksum: dX0uHcJo4/xd3/4ncJijjQ==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 4cc19d6c-c709-46e7-a7fa-c35eb3e119b1) to Async(active_storage_analysis) with arguments: #<GlobalID:0x00005651d7a45a40 @uri=#<URI::GID gid://articles-project/ActiveStorage::Blob/3>>
+Redirected to http://localhost:3000/
+Completed 302 Found in 284ms (ActiveRecord: 140.0ms | Allocations: 15965)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4cc19d6c-c709-46e7-a7fa-c35eb3e119b1] Performing ActiveStorage::AnalyzeJob (Job ID: 4cc19d6c-c709-46e7-a7fa-c35eb3e119b1) from Async(active_storage_analysis) enqueued at 2020-03-28T01:12:37Z with arguments: #<GlobalID:0x00005651d7c88b68 @uri=#<URI::GID gid://articles-project/ActiveStorage::Blob/3>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4cc19d6c-c709-46e7-a7fa-c35eb3e119b1] [36m  Disk Storage (0.5ms) [0m[34mDownloaded file from key: czyohry7en44qbajan0y52es7vu9[0m
+Started GET "/" for ::1 at 2020-03-27 20:12:37 -0500
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  Rendered articles/index.html.erb within layouts/application (Duration: 11.9ms | Allocations: 1330)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+Completed 200 OK in 57ms (Views: 50.6ms | ActiveRecord: 1.5ms | Allocations: 5942)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4cc19d6c-c709-46e7-a7fa-c35eb3e119b1]   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4cc19d6c-c709-46e7-a7fa-c35eb3e119b1]   [1m[36mActiveStorage::Blob Update (0.2ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"width\":1024,\"height\":1011,\"analyzed\":true}"], ["id", 3]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4cc19d6c-c709-46e7-a7fa-c35eb3e119b1]   [1m[35m (67.2ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4cc19d6c-c709-46e7-a7fa-c35eb3e119b1] Performed ActiveStorage::AnalyzeJob (Job ID: 4cc19d6c-c709-46e7-a7fa-c35eb3e119b1) from Async(active_storage_analysis) in 642.28ms
+Started GET "/show_article?id=17" for ::1 at 2020-03-27 20:12:41 -0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:41:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 17], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = ?[0m  [["article_id", 17]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "votes" ON "users"."id" = "votes"."user_id" WHERE "votes"."article_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["article_id", "17"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:19
+  Rendered articles/show.html.erb within layouts/application (Duration: 21.0ms | Allocations: 4345)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+Completed 200 OK in 32ms (Views: 27.9ms | ActiveRecord: 1.5ms | Allocations: 9478)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--38fc407ec3da51d8faf728f24dcc1de4a2a3952c/album1.jpeg" for ::1 at 2020-03-27 20:12:41 -0500
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--38fc407ec3da51d8faf728f24dcc1de4a2a3952c", "filename"=>"album1"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: czyohry7en44qbajan0y52es7vu9 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZM3A1YjJoeWVUZGxialEwY1dKaGFtRnVNSGsxTW1Wek4zWjFPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1Gc1luVnRNUzVxY0dWbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGhiR0oxYlRFdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlUiLCJleHAiOiIyMDIwLTAzLTI4VDAxOjE3OjQxLjkzOFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--d676c423194e8aed1e6ba88f3806fb14d3d1364f/album1.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22album1.jpeg%22%3B+filename%2A%3DUTF-8%27%27album1.jpeg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZM3A1YjJoeWVUZGxialEwY1dKaGFtRnVNSGsxTW1Wek4zWjFPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1Gc1luVnRNUzVxY0dWbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGhiR0oxYlRFdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlUiLCJleHAiOiIyMDIwLTAzLTI4VDAxOjE3OjQxLjkzOFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--d676c423194e8aed1e6ba88f3806fb14d3d1364f/album1.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22album1.jpeg%22%3B+filename%2A%3DUTF-8%27%27album1.jpeg
+Completed 302 Found in 5ms (ActiveRecord: 0.1ms | Allocations: 1760)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZM3A1YjJoeWVUZGxialEwY1dKaGFtRnVNSGsxTW1Wek4zWjFPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1Gc1luVnRNUzVxY0dWbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGhiR0oxYlRFdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlUiLCJleHAiOiIyMDIwLTAzLTI4VDAxOjE3OjQxLjkzOFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--d676c423194e8aed1e6ba88f3806fb14d3d1364f/album1.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22album1.jpeg%22%3B+filename%2A%3DUTF-8%27%27album1.jpeg" for ::1 at 2020-03-27 20:12:41 -0500
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"album1.jpeg\"; filename*=UTF-8''album1.jpeg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZM3A1YjJoeWVUZGxialEwY1dKaGFtRnVNSGsxTW1Wek4zWjFPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1Gc1luVnRNUzVxY0dWbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGhiR0oxYlRFdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlUiLCJleHAiOiIyMDIwLTAzLTI4VDAxOjE3OjQxLjkzOFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--d676c423194e8aed1e6ba88f3806fb14d3d1364f", "filename"=>"album1"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 419)
+
+
+Started GET "/show_article?id=17&vote=1" for ::1 at 2020-03-27 20:12:58 -0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"17", "vote"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:41:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:44:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:44:in `show'
+  [1m[36mCACHE Article Load (0.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:44:in `show'
+  [1m[36mVote Create (0.3ms)[0m  [1m[32mINSERT INTO "votes" ("user_id", "article_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", "3"], ["article_id", "17"], ["created_at", "2020-03-28 01:12:58.616614"], ["updated_at", "2020-03-28 01:12:58.616614"]]
+  ↳ app/controllers/articles_controller.rb:44:in `show'
+  [1m[35m (121.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:44:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 17], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = ?[0m  [["article_id", 17]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "votes" ON "users"."id" = "votes"."user_id" WHERE "votes"."article_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["article_id", "17"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:19
+  Rendered articles/show.html.erb within layouts/application (Duration: 9.0ms | Allocations: 4284)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+Completed 200 OK in 154ms (Views: 13.9ms | ActiveRecord: 122.9ms | Allocations: 15122)
+
+
+Started GET "/show_article?id=17&vote=0" for ::1 at 2020-03-27 20:13:03 -0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"17", "vote"=>"0"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:41:in `show'
+  [1m[36mVote Load (0.3ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."article_id" = ? ORDER BY "votes"."id" ASC LIMIT ?[0m  [["article_id", "17"], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:46:in `show'
+  [1m[36mVote Load (1.4ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:46:in `show'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:46:in `show'
+  [1m[36mVote Destroy (0.4ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/articles_controller.rb:46:in `show'
+  [1m[35m (138.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:46:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 17], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = ?[0m  [["article_id", 17]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "votes" ON "users"."id" = "votes"."user_id" WHERE "votes"."article_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["article_id", "17"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:19
+  Rendered articles/show.html.erb within layouts/application (Duration: 10.0ms | Allocations: 4291)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+Completed 200 OK in 169ms (Views: 15.8ms | ActiveRecord: 141.8ms | Allocations: 13525)
+
+
+Started GET "/" for ::1 at 2020-03-27 20:13:07 -0500
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  Rendered articles/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1350)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+Completed 200 OK in 28ms (Views: 26.1ms | ActiveRecord: 0.7ms | Allocations: 5953)
+
+
+  [1m[35m (18.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mArticle Load (16.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mArticle Load (1.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY "total_votes" DESC LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mCategory Load (32.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."priority" ASC LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for ::1 at 2020-03-28 12:07:21 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY "total_votes" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:5:in `index'
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (9.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 13], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:4
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."priority" ASC[0m
+  ↳ app/views/articles/index.html.erb:7
+  [1m[36mUser Load (10.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  Rendered articles/index.html.erb within layouts/application (Duration: 98.4ms | Allocations: 13454)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+Completed 200 OK in 409ms (Views: 360.4ms | ActiveRecord: 20.6ms | Allocations: 28791)
+
+
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY "total_votes" DESC LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/show_article?id=15" for ::1 at 2020-03-28 12:14:00 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:42:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (28.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 15], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (17.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[36mCategory Load (24.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = ?[0m  [["article_id", 15]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "votes" ON "users"."id" = "votes"."user_id" WHERE "votes"."article_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["article_id", "15"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:19
+  Rendered articles/show.html.erb within layouts/application (Duration: 698.4ms | Allocations: 23864)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+Completed 200 OK in 738ms (Views: 661.2ms | ActiveRecord: 72.5ms | Allocations: 29146)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--96188dfada63edc42a1a17816915d9e7bb485612/bogota-night.jpg" for ::1 at 2020-03-28 12:14:00 -0500
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--96188dfada63edc42a1a17816915d9e7bb485612", "filename"=>"bogota-night"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (15.1ms) [0m[34mGenerated URL for file at key: wklfhas8bx2n63v5ze852tgnw61n (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkMnRzWm1oaGN6aGllREp1TmpOMk5YcGxPRFV5ZEdkdWR6WXhiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KdloyOTBZUzF1YVdkb2RDNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdloyOTBZUzF1YVdkb2RDNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wMy0yOFQxNzoxOTowMS4xNjNaIiwicHVyIjoiYmxvYl9rZXkifX0=--427ea2bb315a46b08a57c988faca2610893204ee/bogota-night.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bogota-night.jpg%22%3B+filename%2A%3DUTF-8%27%27bogota-night.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkMnRzWm1oaGN6aGllREp1TmpOMk5YcGxPRFV5ZEdkdWR6WXhiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KdloyOTBZUzF1YVdkb2RDNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdloyOTBZUzF1YVdkb2RDNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wMy0yOFQxNzoxOTowMS4xNjNaIiwicHVyIjoiYmxvYl9rZXkifX0=--427ea2bb315a46b08a57c988faca2610893204ee/bogota-night.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bogota-night.jpg%22%3B+filename%2A%3DUTF-8%27%27bogota-night.jpg
+Completed 302 Found in 19ms (ActiveRecord: 0.1ms | Allocations: 2087)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkMnRzWm1oaGN6aGllREp1TmpOMk5YcGxPRFV5ZEdkdWR6WXhiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KdloyOTBZUzF1YVdkb2RDNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdloyOTBZUzF1YVdkb2RDNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wMy0yOFQxNzoxOTowMS4xNjNaIiwicHVyIjoiYmxvYl9rZXkifX0=--427ea2bb315a46b08a57c988faca2610893204ee/bogota-night.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bogota-night.jpg%22%3B+filename%2A%3DUTF-8%27%27bogota-night.jpg" for ::1 at 2020-03-28 12:14:01 -0500
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"bogota-night.jpg\"; filename*=UTF-8''bogota-night.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkMnRzWm1oaGN6aGllREp1TmpOMk5YcGxPRFV5ZEdkdWR6WXhiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KdloyOTBZUzF1YVdkb2RDNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdloyOTBZUzF1YVdkb2RDNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wMy0yOFQxNzoxOTowMS4xNjNaIiwicHVyIjoiYmxvYl9rZXkifX0=--427ea2bb315a46b08a57c988faca2610893204ee", "filename"=>"bogota-night"}
+Completed 200 OK in 13ms (ActiveRecord: 0.0ms | Allocations: 456)
+
+
+Started GET "/show_article?id=16" for ::1 at 2020-03-28 12:14:05 -0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:42:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 16], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = ?[0m  [["article_id", 16]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "votes" ON "users"."id" = "votes"."user_id" WHERE "votes"."article_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["article_id", "16"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:19
+  Rendered articles/show.html.erb within layouts/application (Duration: 18.2ms | Allocations: 4293)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+Completed 200 OK in 35ms (Views: 26.6ms | ActiveRecord: 1.8ms | Allocations: 9407)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f02c3a437ad3ec6954d4b971e9e91d710ee27b79/album3.jpg" for ::1 at 2020-03-28 12:14:06 -0500
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f02c3a437ad3ec6954d4b971e9e91d710ee27b79", "filename"=>"album3"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: 6h1peqj06z0qtcs59h2fy0cwnluh (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhObWd4Y0dWeGFqQTJlakJ4ZEdOek5UbG9NbVo1TUdOM2JteDFhQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1Gc1luVnRNeTVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyRnNZblZ0TXk1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIwLTAzLTI4VDE3OjE5OjA2LjA3NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ae981a9b83bc5afbc52ae2856707c66fd779523d/album3.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22album3.jpg%22%3B+filename%2A%3DUTF-8%27%27album3.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhObWd4Y0dWeGFqQTJlakJ4ZEdOek5UbG9NbVo1TUdOM2JteDFhQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1Gc1luVnRNeTVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyRnNZblZ0TXk1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIwLTAzLTI4VDE3OjE5OjA2LjA3NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ae981a9b83bc5afbc52ae2856707c66fd779523d/album3.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22album3.jpg%22%3B+filename%2A%3DUTF-8%27%27album3.jpg
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms | Allocations: 1764)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhObWd4Y0dWeGFqQTJlakJ4ZEdOek5UbG9NbVo1TUdOM2JteDFhQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1Gc1luVnRNeTVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyRnNZblZ0TXk1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIwLTAzLTI4VDE3OjE5OjA2LjA3NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ae981a9b83bc5afbc52ae2856707c66fd779523d/album3.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22album3.jpg%22%3B+filename%2A%3DUTF-8%27%27album3.jpg" for ::1 at 2020-03-28 12:14:06 -0500
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"album3.jpg\"; filename*=UTF-8''album3.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhObWd4Y0dWeGFqQTJlakJ4ZEdOek5UbG9NbVo1TUdOM2JteDFhQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1Gc1luVnRNeTVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyRnNZblZ0TXk1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIwLTAzLTI4VDE3OjE5OjA2LjA3NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ae981a9b83bc5afbc52ae2856707c66fd779523d", "filename"=>"album3"}
+Completed 200 OK in 78ms (ActiveRecord: 0.0ms | Allocations: 413)
+
+
+Started GET "/show_article?id=17" for ::1 at 2020-03-28 12:14:13 -0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:42:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 17], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = ?[0m  [["article_id", 17]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "votes" ON "users"."id" = "votes"."user_id" WHERE "votes"."article_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["article_id", "17"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:19
+  Rendered articles/show.html.erb within layouts/application (Duration: 17.1ms | Allocations: 4293)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+Completed 200 OK in 35ms (Views: 26.2ms | ActiveRecord: 1.7ms | Allocations: 9408)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--38fc407ec3da51d8faf728f24dcc1de4a2a3952c/album1.jpeg" for ::1 at 2020-03-28 12:14:13 -0500
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--38fc407ec3da51d8faf728f24dcc1de4a2a3952c", "filename"=>"album1"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: czyohry7en44qbajan0y52es7vu9 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZM3A1YjJoeWVUZGxialEwY1dKaGFtRnVNSGsxTW1Wek4zWjFPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1Gc1luVnRNUzVxY0dWbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGhiR0oxYlRFdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlUiLCJleHAiOiIyMDIwLTAzLTI4VDE3OjE5OjEzLjM1MloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--64db1394d5cb1d7160b7f16f8c6e00b79f5a6afe/album1.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22album1.jpeg%22%3B+filename%2A%3DUTF-8%27%27album1.jpeg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZM3A1YjJoeWVUZGxialEwY1dKaGFtRnVNSGsxTW1Wek4zWjFPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1Gc1luVnRNUzVxY0dWbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGhiR0oxYlRFdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlUiLCJleHAiOiIyMDIwLTAzLTI4VDE3OjE5OjEzLjM1MloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--64db1394d5cb1d7160b7f16f8c6e00b79f5a6afe/album1.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22album1.jpeg%22%3B+filename%2A%3DUTF-8%27%27album1.jpeg
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 1760)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZM3A1YjJoeWVUZGxialEwY1dKaGFtRnVNSGsxTW1Wek4zWjFPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1Gc1luVnRNUzVxY0dWbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGhiR0oxYlRFdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlUiLCJleHAiOiIyMDIwLTAzLTI4VDE3OjE5OjEzLjM1MloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--64db1394d5cb1d7160b7f16f8c6e00b79f5a6afe/album1.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22album1.jpeg%22%3B+filename%2A%3DUTF-8%27%27album1.jpeg" for ::1 at 2020-03-28 12:14:13 -0500
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"album1.jpeg\"; filename*=UTF-8''album1.jpeg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZM3A1YjJoeWVUZGxialEwY1dKaGFtRnVNSGsxTW1Wek4zWjFPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1Gc1luVnRNUzVxY0dWbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGhiR0oxYlRFdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlUiLCJleHAiOiIyMDIwLTAzLTI4VDE3OjE5OjEzLjM1MloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--64db1394d5cb1d7160b7f16f8c6e00b79f5a6afe", "filename"=>"album1"}
+Completed 200 OK in 90ms (ActiveRecord: 0.0ms | Allocations: 416)
+
+
+  [1m[35m (17.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mCategory Load (50.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."priority" DESC LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."priority" ASC LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mArticle Load (15.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY "total_votes" DESC LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY "total_votes" ASC LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mArticle Load (3.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mVote Load (23.7ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."article_id" = ?[0m  [["article_id", "16"]]
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mVote Load (0.4ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."article_id" = ?[0m  [["article_id", "17"]]
+  [1m[36mVote Load (0.8ms)[0m  [1m[34mSELECT "votes".* FROM "votes" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mVote Load (0.8ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."article_id" = ?[0m  [["article_id", "15"]]
+  [1m[35m (51.1ms)[0m  [1m[34mselect a.id 
+      from articles as a 
+      inner join 
+      votes as v 
+      [0m
+  [1m[35m (29.5ms)[0m  [1m[34mselect a.id from articles as a inner join votes as v group by v.article_id[0m
+  [1m[35m (0.9ms)[0m  [1m[34mselect a.id from articles as a inner join votes as v group by v.article_id order by count(v.article_id)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mselect a.id from articles as a inner join votes as v group by v.article_id order by count(v.article_id)[0m
+Started GET "/show_article?id=17" for ::1 at 2020-03-28 13:21:16 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mArticle Load (14.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:44:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (14.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 17], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (11.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[36mCategory Load (10.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = ?[0m  [["article_id", 17]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mUser Load (30.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mUser Exists? (9.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "votes" ON "users"."id" = "votes"."user_id" WHERE "votes"."article_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["article_id", "17"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:19
+  Rendered articles/show.html.erb within layouts/application (Duration: 562.1ms | Allocations: 39324)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+Completed 200 OK in 1414ms (Views: 1062.6ms | ActiveRecord: 101.9ms | Allocations: 58314)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--38fc407ec3da51d8faf728f24dcc1de4a2a3952c/album1.jpeg" for ::1 at 2020-03-28 13:21:18 -0500
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--38fc407ec3da51d8faf728f24dcc1de4a2a3952c", "filename"=>"album1"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[36m  Disk Storage (82.6ms) [0m[34mGenerated URL for file at key: czyohry7en44qbajan0y52es7vu9 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZM3A1YjJoeWVUZGxialEwY1dKaGFtRnVNSGsxTW1Wek4zWjFPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1Gc1luVnRNUzVxY0dWbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGhiR0oxYlRFdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlUiLCJleHAiOiIyMDIwLTAzLTI4VDE4OjI2OjE5LjkxM1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--b0f8b53dc1279b84bae55d1dde7c9d33c1a686a9/album1.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22album1.jpeg%22%3B+filename%2A%3DUTF-8%27%27album1.jpeg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZM3A1YjJoeWVUZGxialEwY1dKaGFtRnVNSGsxTW1Wek4zWjFPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1Gc1luVnRNUzVxY0dWbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGhiR0oxYlRFdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlUiLCJleHAiOiIyMDIwLTAzLTI4VDE4OjI2OjE5LjkxM1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--b0f8b53dc1279b84bae55d1dde7c9d33c1a686a9/album1.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22album1.jpeg%22%3B+filename%2A%3DUTF-8%27%27album1.jpeg
+Completed 302 Found in 98ms (ActiveRecord: 0.2ms | Allocations: 3256)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZM3A1YjJoeWVUZGxialEwY1dKaGFtRnVNSGsxTW1Wek4zWjFPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1Gc1luVnRNUzVxY0dWbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGhiR0oxYlRFdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlUiLCJleHAiOiIyMDIwLTAzLTI4VDE4OjI2OjE5LjkxM1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--b0f8b53dc1279b84bae55d1dde7c9d33c1a686a9/album1.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22album1.jpeg%22%3B+filename%2A%3DUTF-8%27%27album1.jpeg" for ::1 at 2020-03-28 13:21:19 -0500
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"album1.jpeg\"; filename*=UTF-8''album1.jpeg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZM3A1YjJoeWVUZGxialEwY1dKaGFtRnVNSGsxTW1Wek4zWjFPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1Gc1luVnRNUzVxY0dWbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGhiR0oxYlRFdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlUiLCJleHAiOiIyMDIwLTAzLTI4VDE4OjI2OjE5LjkxM1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--b0f8b53dc1279b84bae55d1dde7c9d33c1a686a9", "filename"=>"album1"}
+Completed 200 OK in 14ms (ActiveRecord: 0.0ms | Allocations: 2535)
+
+
+Started GET "/show_article?id=17&vote=1" for ::1 at 2020-03-28 13:21:26 -0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"17", "vote"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:44:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:47:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:47:in `show'
+  [1m[36mCACHE Article Load (0.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:47:in `show'
+  [1m[36mVote Create (10.3ms)[0m  [1m[32mINSERT INTO "votes" ("user_id", "article_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", "3"], ["article_id", "17"], ["created_at", "2020-03-28 18:21:26.326527"], ["updated_at", "2020-03-28 18:21:26.326527"]]
+  ↳ app/controllers/articles_controller.rb:47:in `show'
+  [1m[35m (110.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:47:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 17], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = ?[0m  [["article_id", 17]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "votes" ON "users"."id" = "votes"."user_id" WHERE "votes"."article_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["article_id", "17"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:19
+  Rendered articles/show.html.erb within layouts/application (Duration: 38.3ms | Allocations: 4300)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+Completed 200 OK in 214ms (Views: 61.9ms | ActiveRecord: 124.3ms | Allocations: 18945)
+
+
+Started GET "/" for ::1 at 2020-03-28 13:21:30 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mselect a.id from articles as a inner join votes as v group by v.article_id order by count(v.article_id)[0m
+  ↳ app/controllers/articles_controller.rb:5:in `index'
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `index'
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 17], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:4
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:4
+  [1m[36mCategory Load (26.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."priority" ASC[0m
+  ↳ app/views/articles/index.html.erb:7
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  Rendered articles/index.html.erb within layouts/application (Duration: 76.7ms | Allocations: 6086)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+Completed 200 OK in 105ms (Views: 74.9ms | ActiveRecord: 27.4ms | Allocations: 11946)
+
+
+Started GET "/" for ::1 at 2020-03-28 13:30:15 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mselect a.id 
+               from articles as a 
+               inner join votes as v 
+               group by v.article_id 
+               order by count(v.article_id)[0m
+  ↳ app/helpers/articles_helper.rb:8:in `most_voted_article'
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:9:in `most_voted_article'
+  [1m[35m (0.3ms)[0m  [1m[34mselect a.id 
+               from articles as a 
+               inner join votes as v 
+               group by v.article_id 
+               order by count(v.article_id)[0m
+  ↳ app/helpers/articles_helper.rb:8:in `most_voted_article'
+  [1m[36mCACHE Article Load (0.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:9:in `most_voted_article'
+  [1m[35m (0.3ms)[0m  [1m[34mselect a.id 
+               from articles as a 
+               inner join votes as v 
+               group by v.article_id 
+               order by count(v.article_id)[0m
+  ↳ app/helpers/articles_helper.rb:8:in `most_voted_article'
+  [1m[36mCACHE Article Load (0.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:9:in `most_voted_article'
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 17], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:4
+  [1m[35m (0.2ms)[0m  [1m[34mselect a.id 
+               from articles as a 
+               inner join votes as v 
+               group by v.article_id 
+               order by count(v.article_id)[0m
+  ↳ app/helpers/articles_helper.rb:8:in `most_voted_article'
+  [1m[36mCACHE Article Load (0.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:9:in `most_voted_article'
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 17], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:4
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:4
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."priority" ASC[0m
+  ↳ app/views/articles/index.html.erb:7
+  Rendered articles/index.html.erb within layouts/application (Duration: 113.8ms | Allocations: 31892)
+Completed 500 Internal Server Error in 150ms (ActiveRecord: 3.2ms | Allocations: 35032)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+     7: <%@categories.each do |category|%>
+     8: <p><%=category.name%><p>
+     9: <%end%>
+    10: <!--<%= link_to "watch", "/show_article?id=#{@main_article.id}" %>
+    11: 
+    12: <% if current_user %>
+    13:   <%= link_to "Add article", '/add_article' %>
+  
+app/views/articles/index.html.erb:10
+Started GET "/show_article?id=17&vote=1" for ::1 at 2020-03-28 13:30:56 -0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"17", "vote"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:41:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:44:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:44:in `show'
+  [1m[36mCACHE Article Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:44:in `show'
+  [1m[36mVote Create (0.3ms)[0m  [1m[32mINSERT INTO "votes" ("user_id", "article_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", "3"], ["article_id", "17"], ["created_at", "2020-03-28 18:30:56.102721"], ["updated_at", "2020-03-28 18:30:56.102721"]]
+  ↳ app/controllers/articles_controller.rb:44:in `show'
+  [1m[35m (85.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:44:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 17], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = ?[0m  [["article_id", 17]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "votes" ON "users"."id" = "votes"."user_id" WHERE "votes"."article_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["article_id", "17"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:19
+  Rendered articles/show.html.erb within layouts/application (Duration: 28.3ms | Allocations: 9053)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+Completed 200 OK in 169ms (Views: 39.5ms | ActiveRecord: 87.6ms | Allocations: 34088)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--38fc407ec3da51d8faf728f24dcc1de4a2a3952c/album1.jpeg" for ::1 at 2020-03-28 13:30:56 -0500
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--38fc407ec3da51d8faf728f24dcc1de4a2a3952c", "filename"=>"album1"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[36m  Disk Storage (1.7ms) [0m[34mGenerated URL for file at key: czyohry7en44qbajan0y52es7vu9 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZM3A1YjJoeWVUZGxialEwY1dKaGFtRnVNSGsxTW1Wek4zWjFPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1Gc1luVnRNUzVxY0dWbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGhiR0oxYlRFdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlUiLCJleHAiOiIyMDIwLTAzLTI4VDE4OjM1OjU2LjI5MloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3d9b92de6fec6f0b9c0260f2baa48464ff31a5cb/album1.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22album1.jpeg%22%3B+filename%2A%3DUTF-8%27%27album1.jpeg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZM3A1YjJoeWVUZGxialEwY1dKaGFtRnVNSGsxTW1Wek4zWjFPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1Gc1luVnRNUzVxY0dWbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGhiR0oxYlRFdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlUiLCJleHAiOiIyMDIwLTAzLTI4VDE4OjM1OjU2LjI5MloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3d9b92de6fec6f0b9c0260f2baa48464ff31a5cb/album1.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22album1.jpeg%22%3B+filename%2A%3DUTF-8%27%27album1.jpeg
+Completed 302 Found in 10ms (ActiveRecord: 0.2ms | Allocations: 2105)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZM3A1YjJoeWVUZGxialEwY1dKaGFtRnVNSGsxTW1Wek4zWjFPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1Gc1luVnRNUzVxY0dWbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGhiR0oxYlRFdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlUiLCJleHAiOiIyMDIwLTAzLTI4VDE4OjM1OjU2LjI5MloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3d9b92de6fec6f0b9c0260f2baa48464ff31a5cb/album1.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22album1.jpeg%22%3B+filename%2A%3DUTF-8%27%27album1.jpeg" for ::1 at 2020-03-28 13:30:56 -0500
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"album1.jpeg\"; filename*=UTF-8''album1.jpeg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZM3A1YjJoeWVUZGxialEwY1dKaGFtRnVNSGsxTW1Wek4zWjFPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1Gc1luVnRNUzVxY0dWbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGhiR0oxYlRFdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlUiLCJleHAiOiIyMDIwLTAzLTI4VDE4OjM1OjU2LjI5MloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3d9b92de6fec6f0b9c0260f2baa48464ff31a5cb", "filename"=>"album1"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 461)
+
+
+Started GET "/" for ::1 at 2020-03-28 13:30:58 -0500
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mselect a.id 
+               from articles as a 
+               inner join votes as v 
+               group by v.article_id 
+               order by count(v.article_id)[0m
+  ↳ app/helpers/articles_helper.rb:8:in `most_voted_article'
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:9:in `most_voted_article'
+  [1m[35m (0.3ms)[0m  [1m[34mselect a.id 
+               from articles as a 
+               inner join votes as v 
+               group by v.article_id 
+               order by count(v.article_id)[0m
+  ↳ app/helpers/articles_helper.rb:8:in `most_voted_article'
+  [1m[36mCACHE Article Load (0.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:9:in `most_voted_article'
+  [1m[35m (0.3ms)[0m  [1m[34mselect a.id 
+               from articles as a 
+               inner join votes as v 
+               group by v.article_id 
+               order by count(v.article_id)[0m
+  ↳ app/helpers/articles_helper.rb:8:in `most_voted_article'
+  [1m[36mCACHE Article Load (0.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:9:in `most_voted_article'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 17], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:4
+  [1m[35m (0.3ms)[0m  [1m[34mselect a.id 
+               from articles as a 
+               inner join votes as v 
+               group by v.article_id 
+               order by count(v.article_id)[0m
+  ↳ app/helpers/articles_helper.rb:8:in `most_voted_article'
+  [1m[36mCACHE Article Load (0.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:9:in `most_voted_article'
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 17], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:4
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."priority" ASC[0m
+  ↳ app/views/articles/index.html.erb:7
+  Rendered articles/index.html.erb within layouts/application (Duration: 31.2ms | Allocations: 8882)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 2.3ms | Allocations: 9462)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+     7: <%@categories.each do |category|%>
+     8: <p><%=category.name%><p>
+     9: <%end%>
+    10: <!--<%= link_to "watch", "/show_article?id=#{@main_article.id}" %>
+    11: 
+    12: <% if current_user %>
+    13:   <%= link_to "Add article", '/add_article' %>
+  
+app/views/articles/index.html.erb:10
+Started GET "/" for ::1 at 2020-03-28 13:32:12 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mselect a.id 
+               from articles as a 
+               inner join votes as v 
+               group by v.article_id 
+               order by count(v.article_id)[0m
+  ↳ app/helpers/articles_helper.rb:8:in `most_voted_article'
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:9:in `most_voted_article'
+  [1m[35m (0.6ms)[0m  [1m[34mselect a.id 
+               from articles as a 
+               inner join votes as v 
+               group by v.article_id 
+               order by count(v.article_id)[0m
+  ↳ app/helpers/articles_helper.rb:8:in `most_voted_article'
+  [1m[36mCACHE Article Load (0.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:9:in `most_voted_article'
+  [1m[35m (0.2ms)[0m  [1m[34mselect a.id 
+               from articles as a 
+               inner join votes as v 
+               group by v.article_id 
+               order by count(v.article_id)[0m
+  ↳ app/helpers/articles_helper.rb:8:in `most_voted_article'
+  [1m[36mCACHE Article Load (0.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:9:in `most_voted_article'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 17], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:4
+  [1m[35m (0.2ms)[0m  [1m[34mselect a.id 
+               from articles as a 
+               inner join votes as v 
+               group by v.article_id 
+               order by count(v.article_id)[0m
+  ↳ app/helpers/articles_helper.rb:8:in `most_voted_article'
+  [1m[36mCACHE Article Load (0.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:9:in `most_voted_article'
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 17], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:4
+  [1m[36mActiveStorage::Blob Load (1.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:4
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."priority" ASC[0m
+  ↳ app/views/articles/index.html.erb:7
+  Rendered articles/index.html.erb within layouts/application (Duration: 123.8ms | Allocations: 39682)
+Completed 500 Internal Server Error in 135ms (ActiveRecord: 5.9ms | Allocations: 44126)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+     7: <%@categories.each do |category|%>
+     8: <p><%=category.name%><p>
+     9: <%end%>
+    10: <!--<%= link_to "watch", "/show_article?id=#{@main_article.id}" %>
+    11: 
+    12: <% if current_user %>
+    13:   <%= link_to "Add article", '/add_article' %>
+  
+app/views/articles/index.html.erb:10
+Started GET "/" for ::1 at 2020-03-28 13:32:24 -0500
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mselect a.id 
+               from articles as a 
+               inner join votes as v 
+               group by v.article_id 
+               order by count(v.article_id)[0m
+  ↳ app/helpers/articles_helper.rb:8:in `most_voted_article'
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:9:in `most_voted_article'
+  [1m[35m (0.6ms)[0m  [1m[34mselect a.id 
+               from articles as a 
+               inner join votes as v 
+               group by v.article_id 
+               order by count(v.article_id)[0m
+  ↳ app/helpers/articles_helper.rb:8:in `most_voted_article'
+  [1m[36mCACHE Article Load (0.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:9:in `most_voted_article'
+  [1m[35m (0.2ms)[0m  [1m[34mselect a.id 
+               from articles as a 
+               inner join votes as v 
+               group by v.article_id 
+               order by count(v.article_id)[0m
+  ↳ app/helpers/articles_helper.rb:8:in `most_voted_article'
+  [1m[36mCACHE Article Load (0.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:9:in `most_voted_article'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 17], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:4
+  [1m[35m (0.3ms)[0m  [1m[34mselect a.id 
+               from articles as a 
+               inner join votes as v 
+               group by v.article_id 
+               order by count(v.article_id)[0m
+  ↳ app/helpers/articles_helper.rb:8:in `most_voted_article'
+  [1m[36mCACHE Article Load (0.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:9:in `most_voted_article'
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 17], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:4
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:4
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."priority" ASC[0m
+  ↳ app/views/articles/index.html.erb:7
+  Rendered articles/index.html.erb within layouts/application (Duration: 22.4ms | Allocations: 8907)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 2.0ms | Allocations: 9510)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+     7: <%@categories.each do |category|%>
+     8: <p><%=category.name%><p>
+     9: <%end%>
+    10: <!--<%= link_to "watch", "/show_article?id=#{@main_article.id}" %>
+    11: 
+    12: <% if current_user %>
+    13:   <%= link_to "Add article", '/add_article' %>
+  
+app/views/articles/index.html.erb:10
+Started GET "/" for ::1 at 2020-03-28 13:32:46 -0500
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mselect a.id 
+               from articles as a 
+               inner join votes as v 
+               group by v.article_id 
+               order by count(v.article_id)[0m
+  ↳ app/helpers/articles_helper.rb:8:in `most_voted_article'
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:9:in `most_voted_article'
+  [1m[35m (0.7ms)[0m  [1m[34mselect a.id 
+               from articles as a 
+               inner join votes as v 
+               group by v.article_id 
+               order by count(v.article_id)[0m
+  ↳ app/helpers/articles_helper.rb:8:in `most_voted_article'
+  [1m[36mCACHE Article Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:9:in `most_voted_article'
+  [1m[35m (0.5ms)[0m  [1m[34mselect a.id 
+               from articles as a 
+               inner join votes as v 
+               group by v.article_id 
+               order by count(v.article_id)[0m
+  ↳ app/helpers/articles_helper.rb:8:in `most_voted_article'
+  [1m[36mCACHE Article Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:9:in `most_voted_article'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 17], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:4
+  [1m[35m (0.4ms)[0m  [1m[34mselect a.id 
+               from articles as a 
+               inner join votes as v 
+               group by v.article_id 
+               order by count(v.article_id)[0m
+  ↳ app/helpers/articles_helper.rb:8:in `most_voted_article'
+  [1m[36mCACHE Article Load (0.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:9:in `most_voted_article'
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 17], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:4
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."priority" ASC[0m
+  ↳ app/views/articles/index.html.erb:7
+  Rendered articles/index.html.erb within layouts/application (Duration: 41.0ms | Allocations: 7789)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+Completed 200 OK in 101ms (Views: 89.0ms | ActiveRecord: 4.6ms | Allocations: 25993)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--38fc407ec3da51d8faf728f24dcc1de4a2a3952c/album1.jpeg" for ::1 at 2020-03-28 13:32:47 -0500
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--38fc407ec3da51d8faf728f24dcc1de4a2a3952c", "filename"=>"album1"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[36m  Disk Storage (2.2ms) [0m[34mGenerated URL for file at key: czyohry7en44qbajan0y52es7vu9 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZM3A1YjJoeWVUZGxialEwY1dKaGFtRnVNSGsxTW1Wek4zWjFPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1Gc1luVnRNUzVxY0dWbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGhiR0oxYlRFdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlUiLCJleHAiOiIyMDIwLTAzLTI4VDE4OjM3OjQ3LjA0MloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--471e21a54fe9f7aaf30c6c8345bbad41a018c805/album1.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22album1.jpeg%22%3B+filename%2A%3DUTF-8%27%27album1.jpeg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZM3A1YjJoeWVUZGxialEwY1dKaGFtRnVNSGsxTW1Wek4zWjFPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1Gc1luVnRNUzVxY0dWbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGhiR0oxYlRFdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlUiLCJleHAiOiIyMDIwLTAzLTI4VDE4OjM3OjQ3LjA0MloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--471e21a54fe9f7aaf30c6c8345bbad41a018c805/album1.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22album1.jpeg%22%3B+filename%2A%3DUTF-8%27%27album1.jpeg
+Completed 302 Found in 6ms (ActiveRecord: 0.1ms | Allocations: 3277)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZM3A1YjJoeWVUZGxialEwY1dKaGFtRnVNSGsxTW1Wek4zWjFPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1Gc1luVnRNUzVxY0dWbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGhiR0oxYlRFdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlUiLCJleHAiOiIyMDIwLTAzLTI4VDE4OjM3OjQ3LjA0MloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--471e21a54fe9f7aaf30c6c8345bbad41a018c805/album1.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22album1.jpeg%22%3B+filename%2A%3DUTF-8%27%27album1.jpeg" for ::1 at 2020-03-28 13:32:47 -0500
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"album1.jpeg\"; filename*=UTF-8''album1.jpeg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZM3A1YjJoeWVUZGxialEwY1dKaGFtRnVNSGsxTW1Wek4zWjFPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1Gc1luVnRNUzVxY0dWbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGhiR0oxYlRFdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlUiLCJleHAiOiIyMDIwLTAzLTI4VDE4OjM3OjQ3LjA0MloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--471e21a54fe9f7aaf30c6c8345bbad41a018c805", "filename"=>"album1"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 469)
+
+
+Started GET "/" for ::1 at 2020-03-28 13:32:50 -0500
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mselect a.id 
+               from articles as a 
+               inner join votes as v 
+               group by v.article_id 
+               order by count(v.article_id)[0m
+  ↳ app/helpers/articles_helper.rb:8:in `most_voted_article'
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:9:in `most_voted_article'
+  [1m[35m (0.2ms)[0m  [1m[34mselect a.id 
+               from articles as a 
+               inner join votes as v 
+               group by v.article_id 
+               order by count(v.article_id)[0m
+  ↳ app/helpers/articles_helper.rb:8:in `most_voted_article'
+  [1m[36mCACHE Article Load (0.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:9:in `most_voted_article'
+  [1m[35m (0.2ms)[0m  [1m[34mselect a.id 
+               from articles as a 
+               inner join votes as v 
+               group by v.article_id 
+               order by count(v.article_id)[0m
+  ↳ app/helpers/articles_helper.rb:8:in `most_voted_article'
+  [1m[36mCACHE Article Load (0.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:9:in `most_voted_article'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 17], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:4
+  [1m[35m (0.2ms)[0m  [1m[34mselect a.id 
+               from articles as a 
+               inner join votes as v 
+               group by v.article_id 
+               order by count(v.article_id)[0m
+  ↳ app/helpers/articles_helper.rb:8:in `most_voted_article'
+  [1m[36mCACHE Article Load (0.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:9:in `most_voted_article'
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 17], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:4
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."priority" ASC[0m
+  ↳ app/views/articles/index.html.erb:7
+  Rendered articles/index.html.erb within layouts/application (Duration: 25.4ms | Allocations: 7609)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+Completed 200 OK in 36ms (Views: 32.4ms | ActiveRecord: 2.1ms | Allocations: 12364)
+
+
+Started GET "/" for ::1 at 2020-03-28 13:32:51 -0500
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mselect a.id 
+               from articles as a 
+               inner join votes as v 
+               group by v.article_id 
+               order by count(v.article_id)[0m
+  ↳ app/helpers/articles_helper.rb:8:in `most_voted_article'
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:9:in `most_voted_article'
+  [1m[35m (0.3ms)[0m  [1m[34mselect a.id 
+               from articles as a 
+               inner join votes as v 
+               group by v.article_id 
+               order by count(v.article_id)[0m
+  ↳ app/helpers/articles_helper.rb:8:in `most_voted_article'
+  [1m[36mCACHE Article Load (0.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:9:in `most_voted_article'
+  [1m[35m (0.7ms)[0m  [1m[34mselect a.id 
+               from articles as a 
+               inner join votes as v 
+               group by v.article_id 
+               order by count(v.article_id)[0m
+  ↳ app/helpers/articles_helper.rb:8:in `most_voted_article'
+  [1m[36mCACHE Article Load (0.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:9:in `most_voted_article'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 17], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:4
+  [1m[35m (0.3ms)[0m  [1m[34mselect a.id 
+               from articles as a 
+               inner join votes as v 
+               group by v.article_id 
+               order by count(v.article_id)[0m
+  ↳ app/helpers/articles_helper.rb:8:in `most_voted_article'
+  [1m[36mCACHE Article Load (0.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:9:in `most_voted_article'
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 17], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:4
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:4
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."priority" ASC[0m
+  ↳ app/views/articles/index.html.erb:7
+  Rendered articles/index.html.erb within layouts/application (Duration: 19.3ms | Allocations: 7588)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user'
+Completed 200 OK in 27ms (Views: 23.9ms | ActiveRecord: 2.4ms | Allocations: 12326)
+
+

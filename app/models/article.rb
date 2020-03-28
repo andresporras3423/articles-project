@@ -7,4 +7,8 @@ class Article < ApplicationRecord
     has_many :categories, :through => :article_categories
     validates :title, presence: true, length: { minimum: 1 }
     validates :text, presence: true, length: { minimum: 1 }
+
+    def total_votes
+        votes.length
+    end
 end

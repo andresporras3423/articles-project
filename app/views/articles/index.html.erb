@@ -1,15 +1,9 @@
-<table>
-<tr>
-    <th>Article</th>
-    <th>Watch</th>
-</tr>
-<%@articles.each do |article|%>
-<tr>
-<td><%=article.title%></td>
-<td><%= link_to "watch", "/show_article?id=#{article.id}" %></td>
-</tr>
+<%unless most_voted_article.nil?%>
+<h1><%=most_voted_article.title%></h1>
+<div style="width:400px; height: auto;">
+<%= image_tag(most_voted_article.image, style:"width:100%") if most_voted_article.image.attached?%>
+</div>
 <%end%>
-</table>
-<% if current_user %>
-  <%= link_to "Add article", '/add_article' %>
-<% end %>
+<%@categories.each do |category|%>
+<p><%=category.name%><p>
+<%end%>

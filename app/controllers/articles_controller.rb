@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :restrict_access, only: %i[new create]
 
   def index
-    @articles = Article.all
+    @categories = Category.all.by_priority
   end
 
   def create
