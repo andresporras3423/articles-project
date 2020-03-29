@@ -7,34 +7,21 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.create(title: params[:title], text: params[:text], user_id: current_user.id, image: params[:image])
-    # @article = Article.new(article_params)
-    # @article.image.attach(params[:image])
-    
-    # File.open('somewhere') do |f|
-    #   @article.picture = f
-    # end
-    # @article.image.attach(params[:image])
-    # respond_to do |format|
-    #   if @article.save
-    #     format.html { redirect_to @article, notice: 'Post was successfully created.' }
-    #     format.json { render :show, status: :created, location: @article }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @article.errors, status: :unprocessable_entity }
-    #   end
-    # end
-  if @article.image.attached?
+  if @article.image.attached? && @article.valid? && !params[:category_ids].nil?
     @article.save
-    # @article.image.attach(params[:image])
-    # @article.save
+    params[:category_ids].each do |category_id|
+      ac = ArticleCategory.new(category_id: category_id, article_id: @article.id)
+      ac.save
+    end
     redirect_to '/'
   else
-    flash[:danger] = 'article text or title cannot be empty'
+    flash[:danger] = 'article is invalid'
     redirect_to '/add_article'
   end
   end
 
   def new
+    @categories = Category.all
   end
 
   def show

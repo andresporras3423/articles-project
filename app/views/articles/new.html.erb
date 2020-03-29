@@ -5,4 +5,13 @@
   content: <%= text_area_tag :text, '', rows: 10, cols: 25 %> 
   image: <%= file_field_tag :image, multiple: true %>
   <%= submit_tag "Submit" %>
+  <ul>
+  <% @categories.each do |category| %>
+      <li>
+        <%= check_box_tag "category_ids[]", category.id %>
+        <%= h category.name -%>
+      </li>
+  <% end %>
+</ul>
 <% end %>
+

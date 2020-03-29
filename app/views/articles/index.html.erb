@@ -1,7 +1,9 @@
 <%unless most_voted_article.nil?%>
 <h3><%=most_voted_article.title%></h3>
 <div style="width:400px; height: auto;">
+<%= link_to "/show_article?id=#{most_voted_article.id}" do %>
 <%= image_tag(most_voted_article.image, style:"width:100%") if most_voted_article.image.attached?%>
+<%end%>
 </div>
 <%end%>
 <%@categories.each do |category|%>
@@ -10,7 +12,9 @@
 <%unless most_recent_article.nil?%>
 <h4><%most_recent_article.title%></h4>
 <div style="width:400px; height: auto;">
+<%= link_to "/show_article?id=#{most_recent_article.id}" do %>
 <%= image_tag(most_recent_article.image, style:"width:100%") if most_recent_article.image.attached?%>
+<%end%>
 </div>
 <%end%>
 <%end%>
