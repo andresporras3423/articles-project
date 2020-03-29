@@ -1,11 +1,11 @@
 <%unless most_voted_article.nil?%>
-<h1><%=most_voted_article.title%></h1>
+<h3><%=most_voted_article.title%></h3>
 <div style="width:400px; height: auto;">
 <%= image_tag(most_voted_article.image, style:"width:100%") if most_voted_article.image.attached?%>
 </div>
 <%end%>
 <%@categories.each do |category|%>
-<p><%=category.name%><p>
+<%= link_to category.name, "/by_category?id=#{category.id}" %>
 <% most_recent_article = recent_article_by_category(category.id)%>
 <%unless most_recent_article.nil?%>
 <h4><%most_recent_article.title%></h4>

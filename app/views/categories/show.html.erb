@@ -1,0 +1,8 @@
+
+<%@articles.each do |article|%>
+<h3><%=article.title%></h3>
+<div style="width:400px; height: auto;">
+<%= image_tag(article.image, style:"width:100%") if article.image.attached?%>
+</div>
+<p><%=article.text%></p>
+<%end%>
