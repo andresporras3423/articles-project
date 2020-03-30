@@ -13,3 +13,103 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+    background-color: rgb(64, 64,64);
+}
+body > * {
+    background-color: white;
+}
+
+.nav-header{
+    padding: 8px;
+    border-bottom-width: 5px;
+    border-bottom-color: rgb(64, 64,64);
+    border-bottom-style: solid;
+}
+
+.main-class{
+    min-height: 400px;
+}
+
+.d-flex{
+    display:flex;
+}
+
+.flex-1{
+    flex: 1;
+    display: flex;
+}
+
+.flex-2{
+    flex: 2;
+    display: flex;
+}
+
+.nav-links {
+    height: 50px;
+    align-items: center;
+    display: flex;
+    flex-direction: row-reverse
+}
+
+.nav-links > * {
+    display: flex;
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(128, 128,128);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.nav-links > span {
+    color: rgb(255, 81, 0);
+}
+
+.nav-links > a{
+    cursor: pointer;
+}
+
+.title-div {
+    height: 50px;
+    align-items: center;
+    display: flex;
+}
+
+.title-div > a {
+    text-decoration: none;
+}
+
+.title-app {
+    font-size: 24px;
+    font-family: 'Nunito Sans', sans-serif;
+    color: rgb(128, 128,128);
+    font-weight: 700;
+}
+
+.bull{
+    color: rgb(255, 81, 0); 
+}
+
+.div-form-container{
+    display: grid;
+    grid-template-columns: 7fr 6fr 7fr;
+}
+
+.form-container{
+    grid-column: 2;
+}
+
+.form-container > h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.form-container > form > * {
+    margin: 10px;
+}
+
+
+

@@ -4,21 +4,36 @@
     <title>ArticlesProject</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700&display=swap" rel="stylesheet">
   </head>
 
   <body>
-  <%= link_to "articles", '/' %> |
+  <nav class="d-flex nav-header">
+  <div class="flex-2 title-div">
+  <%= link_to "/" do %>
+<span class="title-app">tHe cOoL wRItTeR <span class="bull"> &bull; </span> </span>
+<%end%>
+  </div>
+  <div class="flex-1 nav-links">
     <% if current_user %>
-      Signed in as <%= current_user.name %> | 
-      <%= link_to "create article", '/add_article' %> |
-      <%= link_to "Logout", '/logout' %> |
+      <%= link_to "Logout", '/logout' %> 
+      <%= link_to "new article", '/add_article' %>
+      <span>Signed in as <%= current_user.name %></span> 
     <% else %>
-      <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+      <%= link_to 'Signup', '/signup' %>
+      <%= link_to 'Login', '/login' %> 
     <% end %>
+  </div>
+    
+  </nav>
+  <main class="main-class">
+      <%= yield %>
 
-    <%= yield %>
+  </main>
   </body>
 </html>
