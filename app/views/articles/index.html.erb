@@ -2,7 +2,7 @@
 <%unless most_voted_article.nil?%>
 <div class="main-article" style="background-image: url(<%= rails_blob_url(most_voted_article.image) if most_voted_article.image.attached?%>)">
 <h3><%=most_voted_article.title%></h3>
-<p><%=most_voted_article.text%></p>
+<p><%=(most_voted_article.text.length > 150 ? most_voted_article.text[0,150]+'...' : most_voted_article.text) %></p>
 </div>
 <%end%>
 </article>

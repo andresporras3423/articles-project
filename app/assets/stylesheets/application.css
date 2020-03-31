@@ -15,7 +15,8 @@
  */
 
 body {
-    background-color: rgb(64, 64,64);
+    background-color: rgb(78, 68, 63);
+    margin: 8px;
 }
 body > * {
     background-color: white;
@@ -24,12 +25,12 @@ body > * {
 .nav-header{
     padding: 8px;
     border-bottom-width: 5px;
-    border-bottom-color: rgb(64, 64,64);
+    border-bottom-color: rgb(78, 68, 63);
     border-bottom-style: solid;
 }
 
 .main-class{
-    min-height: 400px;
+    min-height: 500px;
 }
 
 .d-flex{
@@ -46,6 +47,11 @@ body > * {
     display: flex;
 }
 
+.flex-3 {
+    flex: 2;
+    display: flex;
+}
+
 .nav-links {
     height: 50px;
     align-items: center;
@@ -57,7 +63,7 @@ body > * {
     display: flex;
     text-decoration: none;
     font-size: 18px;
-    color: rgb(128, 128,128);
+    color: rgb(78, 68, 63);
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     margin-left: 10px;
@@ -85,7 +91,7 @@ body > * {
 .title-app {
     font-size: 24px;
     font-family: 'Nunito Sans', sans-serif;
-    color: rgb(128, 128,128);
+    color: rgb(78, 68, 63);
     font-weight: 700;
 }
 
@@ -103,13 +109,51 @@ body > * {
 }
 
 .form-container > h2 {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .form-container > form > * {
     margin: 10px;
 }
 
+.footer-section{
+    height: 50px;
+    color: white;
+    background-color: rgb(78, 68, 63);
+    /* position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%; */
+}
 
+.title-footer {
+    font-size: 24px;
+    font-family: 'Nunito Sans', sans-serif;
+    color: white;
+    font-weight: 700;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
+.license {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.license > * {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.license > span:not(:nth-child(3)) {
+    color: rgb(255, 81, 0); 
+}
+
+.social-icons {
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 20px;
+}
 
