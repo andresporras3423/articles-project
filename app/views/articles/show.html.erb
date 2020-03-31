@@ -1,23 +1,40 @@
+<div class="row full-article">
+<div class="show-article col-9">
+<div class="full-title">
 <h1><%=@article.title%></h1>
-<div style="width:400px; height: auto;">
-<%= image_tag(@article.image, style:"width:100%") if @article.image.attached?%>
 </div>
-<p><%=@article.text%></p>
-
-<table>
-<tr>
-    <th>categories</th>
-</tr>
-<%@article.categories.each do |category|%>
-<tr>
-<td>
-<%=category.name%>
-</td>
-</tr>
+<div class="image-article" style="background-image: url(<%= rails_blob_url(@article.image) if @article.image.attached?%>)">
+</div>
+<%@article.text.split("\r\n").each do |paragraph|%>
+<p><%=paragraph%></p>
 <%end%>
-</table>
+</div>
+<div class="full-article-info col-3">
+<p>
+<strong>categories:</strong> <%=@list_categories.join(', ')%>
+</p>
+<p>
+<strong>total votes:</strong> <%=@article.votes.length%>
+</p>
+<p>
+<%unless current_user.nil?%>
 <%if @article.voters.include?(current_user)%>
-<%= link_to "unvote", "/show_article?id=#{@article.id}&vote=0" %>
-<%else%>
-<%= link_to "vote", "/show_article?id=#{@article.id}&vote=1" %>
+<%= link_to "/show_article?id=#{@article.id}&vote=0" do %>
+  <%= button_tag "unvote", class: "btn-primary btn-vote" %>
 <%end%>
+<%else%>
+<%= link_to "/show_article?id=#{@article.id}&vote=1" do %>
+  <%= button_tag "vote", class: "btn-primary btn-vote"  %>
+<%end%>
+<%end%>
+<%end%>
+</p>
+</div>
+</div>
+
+
+
+
+<!--
+<%= image_tag(@article.image, style:"width:100%") if @article.image.attached?%>
+-->

@@ -1,4 +1,20 @@
 
+<div class="all-articles">
+<%@articles.each_with_index do |article, i|%>
+<div class="article-card" style="flex-direction: <%= ((i/2).floor() % 2 == 0 ? 'row' : 'row-reverse') %>;">
+<div class="all-articles-img" style="background-image: url(<%= rails_blob_url(article.image) %>)"></div>
+<article class="all-articles-art">
+<h5><%=@category.name%></h5>
+<h5><%=article.title%></h5>
+<p><%=(article.text[0,150]+'...') %></p>
+<%= link_to "Read More", "/show_article?id=#{article.id}" %> 
+</article>
+</div>
+<%end%>
+</div>
+
+
+<!--
 <%@articles.each do |article|%>
 <h3><%=article.title%></h3>
 <div style="width:400px; height: auto;">
@@ -6,3 +22,4 @@
 </div>
 <p><%=article.text%></p>
 <%end%>
+-->

@@ -3,6 +3,7 @@ class ArticlesController < ApplicationController
 
   def index
     @categories = Category.all.by_priority
+    @most_voted_article = most_voted_article
   end
 
   def create
@@ -26,6 +27,8 @@ class ArticlesController < ApplicationController
 
   def show
     @article=Article.find(params[:id])
+    @list_categories = []
+    @article.categories.each{|c| @list_categories.push(c.name)}
     if params[:vote]=='1'
       vote = Vote.new(user_id: current_user.id, article_id: @article.id)
       vote.save
