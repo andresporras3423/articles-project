@@ -16,28 +16,20 @@ module ArticlesHelper
     end
 
     def recent_articles_by_category
-        a1=Article.all.includes(:categories).joins("inner join
-        (select max(a.created_at), a.id as 'id'
+        sql = "select 'articles'.*, max_articles.name, max_articles.category_id from articles
+        inner join
+        (select max(a.created_at), a.id as 'id', c.name as 'name', c.id as 'category_id'
         from articles a
         inner join article_categories ac
         on a.id = ac.article_id
         inner join categories c
         on ac.category_id = c.id
         group by (c.id)) as max_articles
-        on articles.id = max_articles.id")
-        # Article.all.joins("INNER JOIN article_categories ac ON articles.id = ac.article_id INNER JOIN categories c on ac.category_id = c.id").group("c.id")
+        on articles.id = max_articles.id"
+        ActiveRecord::Base.connection.execute(sql)
     end
 end
 
 
 
-# select "articles".* from articles
-# inner join
-# (select max(a.created_at), a.id as 'id'
-# from articles a
-# inner join article_categories ac
-# on a.id = ac.article_id
-# inner join categories c
-# on ac.category_id = c.id
-# group by (c.id)) as max_articles
-# on articles.id = max_articles.id
+

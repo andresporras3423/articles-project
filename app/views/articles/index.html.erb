@@ -9,14 +9,11 @@
 </article>
 
 <div class="categories-container">
-<%@categories.each do |category|%>
-<% most_recent_article = recent_article_by_category(category.id)%>
-<%unless most_recent_article.nil?%>
-<div class="by-category"  style="background-image: url(<%=most_recent_article.picture %>)">
-<span><%= link_to category.name, "/by_category?id=#{category.id}" %></span>
-<h4><%=most_recent_article.title%></h4>
+<%@recent_articles_by_category.each do |most_recent_article|%>
+<div class="by-category"  style="background-image: url(<%=most_recent_article["picture"] %>)">
+<span><%= link_to most_recent_article["name"], "/by_category?id=#{most_recent_article["category_id"]}" %></span>
+<h4><%=most_recent_article["title"]%></h4>
 </div>
-<%end%>
 <%end%>
 </div>
 <!--
