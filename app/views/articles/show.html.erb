@@ -11,7 +11,11 @@
 </div>
 <div class="full-article-info col-3">
 <p>
-<strong>categories:</strong> <%=@list_categories.join(', ')%>
+<strong>categories:</strong> 
+<%@article.categories.each_with_index do |c, i|%>
+  <%= link_to c.name, "/by_category?id=#{c.id}", class: "link-color" %>
+  <%=(i==(@article.categories.length-1) ? '' : ', ')%>
+<%end%>
 </p>
 <p>
 <strong>total votes:</strong> <%=@article.votes.length%>
@@ -31,10 +35,3 @@
 </p>
 </div>
 </div>
-
-
-
-
-<!--
-<%= image_tag(@article.image, style:"width:100%") if @article.image.attached?%>
--->
