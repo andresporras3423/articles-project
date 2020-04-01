@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  include Rails.application.routes.url_helpers
   before_action :restrict_access, only: %i[new create]
 
   def index
@@ -10,6 +11,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.create(title: params[:title], text: params[:text], user_id: current_user.id, image: params[:image])
   if @article.image.attached? && @article.valid? && !params[:category_ids].nil?
+    @article.picture = rails_blob_url(@article.image, only_path: true)
     @article.save
     params[:category_ids].each do |category_id|
       ac = ArticleCategory.new(category_id: category_id, article_id: @article.id)

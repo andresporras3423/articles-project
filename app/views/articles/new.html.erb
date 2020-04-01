@@ -15,7 +15,7 @@
   <% @categories.each do |category| %>
       <li class="col-12 row">
         <%=label_tag category.name, category.name, class: "col-6" %>
-        <%= check_box_tag "category_ids[]", category.id, false, class: 'form-control col-6' %>
+        <%= check_box_tag "category_ids[]", category.id, false, class: 'form-control col-6', id:"checkbox#{category.id}" %>
       </li>
   <% end %>
 </ul>
