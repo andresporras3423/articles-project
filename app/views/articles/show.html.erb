@@ -3,7 +3,7 @@
 <div class="full-title">
 <h1><%=@article.title%></h1>
 </div>
-<div class="image-article" style="background-image: url(<%= rails_blob_url(@article.image) if @article.image.attached?%>)">
+<div class="image-article" style="background-image: url(<%=@article.picture%>)">
 </div>
 <%@article.text.split("\r\n").each do |paragraph|%>
 <p><%=paragraph%></p>

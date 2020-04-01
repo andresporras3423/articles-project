@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
   def index
     @categories = Category.all.by_priority
     @most_voted_article = most_voted_article
+    @recent_articles_by_category = recent_articles_by_category
   end
 
   def create
