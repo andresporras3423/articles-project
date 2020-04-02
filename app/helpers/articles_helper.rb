@@ -22,10 +22,10 @@ module ArticlesHelper
     inner join
     (select max(a.created_at)
     , a.id as id, c.name as name, c.id as category_id, c.priority as priority
-    from articles a
-    inner join article_categories ac
+    from articles as a
+    inner join article_categories as ac
     on a.id = ac.article_id
-    inner join categories c
+    inner join categories as c
     on ac.category_id = c.id
     group by (c.id)) as max_articles
     on articles.id = max_articles.id
