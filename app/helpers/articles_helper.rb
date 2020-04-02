@@ -3,13 +3,7 @@ module ArticlesHelper
     Article.all.includes(:votes).max_by { |a| a.votes.length }
   end
 
-  def recent_article_by_category(category_id)
-    Category.find(category_id).articles.max_by(&:created_at)
-  end
-
   def recent_articles_by_category
-    # max_by_categories = []
-    # Articles.all.order(:)
     sql = "select
         articles.id, articles.title, articles.text, articles.user_id, articles.picture
         , max_articles.name, max_articles.category_id from articles
