@@ -5,8 +5,6 @@ ruby '2.6.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -24,11 +22,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'carrierwave', '1.2.2'
 gem 'mini_magick', '4.7.0'
-
-group :production do
-  # gem 'pg',  '0.20.0'
-  gem 'fog', '1.42'
-end
+gem 'pg'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
