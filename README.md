@@ -39,6 +39,7 @@ Ruby on Rails Microverse Capstone Project By Oscar Russi
 - Run "bundle install" inside folder
 - Run "rails server" inside folder
 - Run "rails db:migrations"
+- Run "rails db:seed"
 - Go to http://127.0.0.1:3000/
 * OPTIONAL:
 - Run "rspec" for running the tests
