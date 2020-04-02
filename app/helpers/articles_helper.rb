@@ -8,7 +8,11 @@ module ArticlesHelper
   end
 
   def recent_articles_by_category
-    sql = "select 'articles'.*, max_articles.name, max_articles.category_id from articles
+    # max_by_categories = []
+    # Articles.all.order(:)
+    sql = "select
+        articles.id, articles.title, articles.text, articles.user_id, articles.picture
+        , max_articles.name, max_articles.category_id from articles
         inner join
         (select max(a.created_at)
         , a.id as 'id', c.name as 'name', c.id as 'category_id', c.priority as 'priority'
