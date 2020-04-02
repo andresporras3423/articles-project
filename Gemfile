@@ -23,11 +23,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'carrierwave', '1.2.2'
 gem 'mini_magick', '4.7.0'
 
-group :production do
-  # gem 'pg',  '0.20.0'
-  gem 'postgres-pr'
-  gem 'fog', '1.42'
-end
+gem 'pg'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -37,7 +33,6 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'sqlite3'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'database_cleaner'
   gem 'rspec-rails', '~> 4.0.0.beta2'
