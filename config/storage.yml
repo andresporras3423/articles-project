@@ -9,7 +9,7 @@ local:
   google:
     service: GCS
     project: articles-images
-    credentials: <%= Rails.root.join("config/secrets/todo-pic.json") %>
+    credentials: <%= ENV['GOOGLE_APPLICATION_CREDENTIALS'].as_json %>
     bucket: articles-images-1
 
   google_dev:
