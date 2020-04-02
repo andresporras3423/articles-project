@@ -16,18 +16,20 @@ module ArticlesHelper
   end
 
   def recent_articles_by_category
-    sql = "select 'articles'.*, max_articles.name, max_articles.category_id from articles
-        inner join
-        (select max(a.created_at)
-        , a.id as 'id', c.name as 'name', c.id as 'category_id', c.priority as 'priority'
-        from articles a
-        inner join article_categories ac
-        on a.id = ac.article_id
-        inner join categories c
-        on ac.category_id = c.id
-        group by (c.id)) as max_articles
-        on articles.id = max_articles.id
-        order by priority"
+    sql = "select
+    articles.id, articles.title, articles.text, articles.user_id, articles.picture
+    , max_articles.name, max_articles.category_id from articles
+    inner join
+    (select max(a.created_at)
+    , a.id as 'id', c.name as 'name', c.id as 'category_id', c.priority as 'priority'
+    from articles a
+    inner join article_categories ac
+    on a.id = ac.article_id
+    inner join categories c
+    on ac.category_id = c.id
+    group by (c.id)) as max_articles
+    on articles.id = max_articles.id
+    order by priority"
     ActiveRecord::Base.connection.execute(sql)
   end
 end
