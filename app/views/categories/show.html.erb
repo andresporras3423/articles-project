@@ -6,7 +6,7 @@
 <h5><%=@category.name%></h5>
 <h5><%=article.title%></h5>
 <p><%=(article.text[0,150]+'...') %></p>
-<%= link_to "Read More", "/show_article?id=#{article.id}" %> 
+<%= link_to "Read More", "/show_article?id=#{article.id}", id: "article#{article.id}" %> 
 </article>
 </div>
 <%end%>

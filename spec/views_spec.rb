@@ -13,8 +13,8 @@ RSpec.describe 'index page', type: :feature do
 
     @c1 = Category.new(name: "health", priority:1)
     @c1.save
-    @c1 = Category.new(name: "sport", priority:1)
-    @c1.save
+    @c2 = Category.new(name: "sport", priority:2)
+    @c2.save
   end
 
   before(:each) do
@@ -55,116 +55,62 @@ RSpec.describe 'index page', type: :feature do
     @text = "1234qwerasdf"*20
     fill_in 'title', with: 'my first article'
     fill_in 'text', with: @text
-    # attach_file 'image', "/app/assets/images/screenshot.png"
     page.attach_file('image', File.expand_path('./app/assets/images/screenshot.png'))
     find("#checkbox1").click
     click_button 'Submit'
     page.should have_content('my first article')
   end
 
-#   scenario 'test comment event' do
-#     fill_in 'post_content', with: 'my first post'
-#     click_button 'Save'
-#     fill_in 'comment_content', with: 'my first comment'
-#     click_button 'Comment'
-#     page.should have_content('my first comment')
-#   end
+  scenario 'test access to category' do
+    find('a', text: 'new article').click
+    @text = "1234qwerasdf"*20
+    fill_in 'title', with: 'my first article'
+    fill_in 'text', with: @text
+    page.attach_file('image', File.expand_path('./app/assets/images/screenshot.png'))
+    find("#checkbox1").click
+    click_button 'Submit'
+    find('a', text: 'health').click
+    page.should have_content('1234qwerasdf')
+  end
 
-#   scenario 'test like event' do
-#     fill_in 'post_content', with: 'my first post'
-#     click_button 'Save'
-#     find('a', text: 'Like!').click
-#     page.should have_content('likes: 1')
-#   end
+  scenario 'vote article' do
+    find('a', text: 'new article').click
+    @text = "1234qwerasdf"*20
+    fill_in 'title', with: 'my first article user1'
+    fill_in 'text', with: @text
+    page.attach_file('image', File.expand_path('./app/assets/images/screenshot.png'))
+    find("#checkbox1").click
+    click_button 'Submit'
+    article = Article.all.find_by_title("my first article user1")
+    find('a', text: 'health').click
+    find("#article#{article.id}").click
+    page.should have_content('1234qwerasdf')
+  end
 
-#   scenario 'test show user' do
-#     find('a', text: 'All users').click
-#     page.should have_content('Name: user2')
-#   end
+  scenario 'test vote article' do
+    find('a', text: 'new article').click
+    @text = "1234qwerasdf"*20
+    fill_in 'title', with: 'my first article user1'
+    fill_in 'text', with: @text
+    page.attach_file('image', File.expand_path('./app/assets/images/screenshot.png'))
+    find("#checkbox1").click
+    click_button 'Submit'
+    article = Article.all.find_by_title("my first article user1")
+    find('a', text: 'health').click
+    find("#article#{article.id}").click
+    click_button 'vote'
+    page.should have_content('total votes: 1')
+  end
 
-#   scenario 'test frienship' do
-#     find('a', text: 'All users').click
-#     click_button 'invite2'
-#     f1 = Friendship.find_by(user_id: 1, friend_id: 2, confirmed: nil)
-#     expect(f1.valid?).to eq(true)
-#   end
-
-#   scenario 'test sign out' do
-#     find('a', text: 'Sign out').click
-#     page.should have_content('You need to sign in or sign up before continuing.')
-#   end
-
-#   scenario 'accept friend request' do
-#     find('a', text: 'All users').click
-#     click_button 'invite2'
-#     find('a', text: 'Sign out').click
-#     fill_in 'Email', with: 'user2@u2.com'
-#     fill_in 'Password', with: '123456'
-#     click_button 'Log in'
-#     find('a', text: 'All users').click
-#     click_button 'accept'
-#     f1 = Friendship.find_by(user_id: 1, friend_id: 2, confirmed: true)
-#     expect(f1.valid?).to eq(true)
-#   end
-
-#   scenario 'reject friend request' do
-#     find('a', text: 'All users').click
-#     click_button 'invite2'
-#     find('a', text: 'Sign out').click
-#     fill_in 'Email', with: 'user2@u2.com'
-#     fill_in 'Password', with: '123456'
-#     click_button 'Log in'
-#     find('a', text: 'All users').click
-#     click_button 'reject'
-#     f1 = Friendship.find_by(user_id: 1, friend_id: 2)
-#     expect(f1).to eq(nil)
-#   end
-
-#   scenario 'test comment count' do
-#     fill_in 'post_content', with: 'my first post'
-#     click_button 'Save'
-#     fill_in 'comment_content', with: 'my first comment'
-#     click_button 'Comment'
-#     fill_in 'comment_content', with: 'my second comment'
-#     click_button 'Comment'
-#     page.should have_content('comments: 2')
-#   end
-
-#   scenario 'watch friends posts in timeline' do
-#     find('a', text: 'All users').click
-#     click_button 'invite2'
-#     find('a', text: 'Sign out').click
-#     fill_in 'Email', with: 'user2@u2.com'
-#     fill_in 'Password', with: '123456'
-#     click_button 'Log in'
-#     find('a', text: 'All users').click
-#     click_button 'accept'
-#     visit '/'
-#     fill_in 'post_content', with: 'post by user2'
-#     click_button 'Save'
-#     find('a', text: 'Sign out').click
-#     fill_in 'Email', with: 'user1@u1.com'
-#     fill_in 'Password', with: '123456'
-#     click_button 'Log in'
-#     page.should have_content('post by user2')
-#   end
-
-#   scenario 'cannot watch posts in timeline if not my friend' do
-#     find('a', text: 'All users').click
-#     click_button 'invite2'
-#     find('a', text: 'Sign out').click
-#     fill_in 'Email', with: 'user2@u2.com'
-#     fill_in 'Password', with: '123456'
-#     click_button 'Log in'
-#     find('a', text: 'All users').click
-#     click_button 'reject'
-#     visit '/'
-#     fill_in 'post_content', with: 'post by user2'
-#     click_button 'Save'
-#     find('a', text: 'Sign out').click
-#     fill_in 'Email', with: 'user1@u1.com'
-#     fill_in 'Password', with: '123456'
-#     click_button 'Log in'
-#     page.should have_no_content('post by user2')
-#   end
+  scenario 'test link to most popular article' do
+    find('a', text: 'new article').click
+    @text = "1234qwerasdf"*20
+    fill_in 'title', with: 'my first article'
+    fill_in 'text', with: @text
+    page.attach_file('image', File.expand_path('./app/assets/images/screenshot.png'))
+    find("#checkbox1").click
+    click_button 'Submit'
+    find('a', text: 'Read More').click
+    page.should have_content('1234qwerasdf')
+  end
 end

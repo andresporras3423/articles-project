@@ -20,18 +20,15 @@
 <p>
 <strong>total votes:</strong> <%=@article.votes.length%>
 </p>
-<p>
+<%= form_tag "/show_article?id=#{@article.id}" do %>
 <%unless current_user.nil?%>
 <%if @article.voters.include?(current_user)%>
-<%= link_to "/show_article?id=#{@article.id}&vote=0" do %>
-  <%= button_tag "unvote", class: "btn-primary btn-vote" %>
-<%end%>
+<%= submit_tag "", :value => "unvote", :name => "unvote", class: "btn-primary btn-vote" %>
 <%else%>
-<%= link_to "/show_article?id=#{@article.id}&vote=1" do %>
-  <%= button_tag "vote", class: "btn-primary btn-vote"  %>
+<%= submit_tag "", :value => "vote", :name => "vote", class: "btn-primary btn-vote" %>
 <%end%>
+<% end %>
 <%end%>
-<%end%>
-</p>
+
 </div>
 </div>

@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get '/add_article' => 'articles#new'
   post '/add_article' => 'articles#create'
   get '/show_article',  to: 'articles#show'
+  post '/show_article',  to: 'articles#show'
   get '/by_category',  to: 'categories#show'
   # post '/update_vote' => 'articles#show'
 end
