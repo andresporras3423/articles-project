@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ArticlesProject</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+  <nav class="d-flex nav-header">
+  <div class="flex-2 title-div">
+  <%= link_to "/" do %>
+<span class="title-app">tHe cOoL wRItTer <span class="bull"> &bull; </span> </span>
+<%end%>
+  </div>
+  <div class="flex-1 nav-links">
+    <% if current_user %>
+      <%= link_to "Logout", '/logout' %> 
+      <%= link_to "new article", '/add_article' %>
+      <span>Signed in as <%= current_user.name %></span> 
+    <% else %>
+      <%= link_to 'Signup', '/signup' %>
+      <%= link_to 'Login', '/login' %> 
+    <% end %>
+  </div>
+    
+  </nav>
+  <main class="main-class">
+      <%= yield %>
+
+  </main>
+
+  <footer class="d-flex footer-section">
+  <div class="flex-1 title-footer">
+  <%= link_to "/" do %>
+  <span class="title-footer">tHe cOoL wRItTer <span class="bull"> &bull; </span> </span>
+  <%end%>
+  </div>
+  <div class="flex-2 license">
+    <span>Privacy Policy</span>
+    <span>Terms & Conditions</span>
+    <span>Copyright 2014. All rights reserved.</span>
+  </div>
+  <div class="flex-1 social-icons">
+    <span>Connect with us:</span>
+    <span class="social-links">
+    <label><i class="fa fa-facebook-official"></i></label>
+    <label><i class="fa fa-twitter"></i></label>
+    <label><i class="fa fa-instagram"></i></label>
+    </span>
+  </div>
+  </footer>
+  </body>
+</html>

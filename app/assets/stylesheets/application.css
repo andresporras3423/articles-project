@@ -1,0 +1,186 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+    background-color: rgb(78, 68, 63);
+    margin: 8px;
+}
+body > * {
+    background-color: white;
+}
+
+input[type=checkbox] {
+    transform: scale(0.5);
+}
+
+.nav-header{
+    padding: 8px;
+    border-bottom-width: 5px;
+    border-bottom-color: rgb(78, 68, 63);
+    border-bottom-style: solid;
+}
+
+.main-class{
+    min-height: 500px;
+}
+
+.d-flex{
+    display:flex;
+}
+
+.flex-1{
+    flex: 1;
+    display: flex;
+}
+
+.flex-2{
+    flex: 2;
+    display: flex;
+}
+
+.flex-3 {
+    flex: 2;
+    display: flex;
+}
+
+.nav-links {
+    height: 50px;
+    align-items: center;
+    display: flex;
+    flex-direction: row-reverse
+}
+
+.nav-links > * {
+    display: flex;
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(78, 68, 63);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.nav-links > span {
+    color: rgb(255, 81, 0);
+}
+
+.nav-links > a{
+    cursor: pointer;
+}
+
+.nav-links > a:hover{
+    color: rgb(248, 173, 54);
+    text-decoration-color: rgb(248, 173, 54);
+}
+
+.title-div {
+    height: 50px;
+    align-items: center;
+    display: flex;
+}
+
+.title-div > a, .title-footer > a {
+    text-decoration: none;
+}
+
+.title-app {
+    font-size: 24px;
+    font-family: 'Nunito Sans', sans-serif;
+    color: rgb(78, 68, 63);
+    font-weight: 700;
+}
+
+.bull{
+    color: rgb(255, 81, 0); 
+}
+
+.div-form-container{
+    display: grid;
+    grid-template-columns: 7fr 6fr 7fr;
+}
+
+.form-container{
+    grid-column: 2;
+}
+
+.form-container > h2 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.form-container > form > * {
+    margin: 10px;
+}
+
+.footer-section{
+    height: 50px;
+    color: white;
+    background-color: rgb(78, 68, 63);
+    /* position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%; */
+}
+
+.title-footer {
+    font-size: 24px;
+    font-family: 'Nunito Sans', sans-serif;
+    color: white;
+    font-weight: 700;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
+.license {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.license > * {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.license > span:not(:nth-child(3)) {
+    color: rgb(255, 81, 0); 
+}
+
+.social-icons {
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 20px;
+}
+
+.social-links > label {
+    width: 30px;
+    height: 30px;
+    background-color: rgb(255, 81, 0); 
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 15px;
+    position: relative;
+}
+
+.social-links > label > i {
+    cursor: pointer;
+    position: absolute;
+    top: 7px;
+    left: 8px;
+}
+
