@@ -4,6 +4,5 @@ class CategoriesController < ApplicationController
     @articles = @category.articles
   end
 
-  def index
-  end
+  def index; end
 end

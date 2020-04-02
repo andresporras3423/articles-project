@@ -16,8 +16,8 @@ RSpec.describe Category, type: :model do
     end
 
     it 'create invalid article by repeated priority' do
-        c2 = Category.new(name: 'art', priority: 500)
-        expect(c2.valid?).to eq(false)
+      c2 = Category.new(name: 'art', priority: 500)
+      expect(c2.valid?).to eq(false)
     end
   end
 end

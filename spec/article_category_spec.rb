@@ -4,8 +4,8 @@ RSpec.describe ArticleCategory, type: :model do
   before(:each) do
     @u1 = User.create(name: 'Oscar', email: 'q@q.com', password: '12345678', password_confirmation: '12345678')
     @u1.save
-    @text='1234567890'*20
-    @a1 = Article.new(title: 'test article', text: @text, user_id: @u1.id, picture:"/example.jpg")
+    @text = '1234567890' * 20
+    @a1 = Article.new(title: 'test article', text: @text, user_id: @u1.id, picture: '/example.jpg')
     @a1.save
     @c1 = Category.new(name: 'sports', priority: 1000)
     @c1.save
@@ -23,8 +23,8 @@ RSpec.describe ArticleCategory, type: :model do
     end
 
     it 'create invalid article by repeated priority' do
-        ac2 = ArticleCategory.new(article_id: @a1.id, category_id: -1)
-        expect(ac2.valid?).to eq(false)
+      ac2 = ArticleCategory.new(article_id: @a1.id, category_id: -1)
+      expect(ac2.valid?).to eq(false)
     end
   end
 end

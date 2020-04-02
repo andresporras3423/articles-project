@@ -9,19 +9,22 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.create(title: params[:title], text: params[:text], user_id: current_user.id, image: params[:image])
-  if @article.image.attached? && @article.valid? && !params[:category_ids].nil?
-    @article.picture = rails_blob_url(@article.image, only_path: true)
-    @article.save
-    params[:category_ids].each do |category_id|
-      ac = ArticleCategory.new(category_id: category_id, article_id: @article.id)
-      ac.save
+    @article = Article.create(title: params[:title],
+                              text: params[:text],
+                              user_id: current_user.id,
+                              image: params[:image])
+    if @article.image.attached? && @article.valid? && !params[:category_ids].nil?
+      @article.picture = rails_blob_url(@article.image, only_path: true)
+      @article.save
+      params[:category_ids].each do |category_id|
+        ac = ArticleCategory.new(category_id: category_id, article_id: @article.id)
+        ac.save
+      end
+      redirect_to '/'
+    else
+      flash[:danger] = 'article is invalid'
+      redirect_to '/add_article'
     end
-    redirect_to '/'
-  else
-    flash[:danger] = 'article is invalid'
-    redirect_to '/add_article'
-  end
   end
 
   def new
@@ -29,13 +32,13 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article=Article.find(params[:id])
+    @article = Article.find(params[:id])
     @list_categories = []
-    if params[:vote]!=nil
+    if !params[:vote].nil?
       vote = Vote.new(user_id: current_user.id, article_id: @article.id)
       vote.save
-    elsif params[:unvote]!=nil
-      Vote.destroy(@article.votes.first{|v| v.user_id==current_user.id}.id)
+    elsif !params[:unvote].nil?
+      Vote.destroy(@article.votes.first { |v| v.user_id == current_user.id }.id)
     end
   end
 

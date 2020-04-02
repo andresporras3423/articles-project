@@ -4,8 +4,8 @@ RSpec.describe Vote, type: :model do
   before(:each) do
     @u1 = User.create(name: 'Oscar', email: 'q@q.com', password: '12345678', password_confirmation: '12345678')
     @u1.save
-    @text='1234567890'*20
-    @a1 = Article.new(title: 'test article', text: @text, user_id: @u1.id, picture:"/example.jpg")
+    @text = '1234567890' * 20
+    @a1 = Article.new(title: 'test article', text: @text, user_id: @u1.id, picture: '/example.jpg')
     @a1.save
     @v1 = Vote.new(user_id: @u1.id, article_id: @a1.id)
     @v1.save

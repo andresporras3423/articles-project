@@ -11,9 +11,9 @@ RSpec.describe 'index page', type: :feature do
     @user3 = User.create(name: 'user3', email: 'user3@u3.com', password: 'asdfgh', password_confirmation: 'asdfgh')
     @user3.save
 
-    @c1 = Category.new(name: "health", priority:1)
+    @c1 = Category.new(name: 'health', priority: 1)
     @c1.save
-    @c2 = Category.new(name: "sport", priority:2)
+    @c2 = Category.new(name: 'sport', priority: 2)
     @c2.save
   end
 
@@ -52,22 +52,22 @@ RSpec.describe 'index page', type: :feature do
 
   scenario 'test post event' do
     find('a', text: 'new article').click
-    @text = "1234qwerasdf"*20
+    @text = '1234qwerasdf' * 20
     fill_in 'title', with: 'my first article'
     fill_in 'text', with: @text
     page.attach_file('image', File.expand_path('./app/assets/images/screenshot.png'))
-    find("#checkbox1").click
+    find('#checkbox1').click
     click_button 'Submit'
     page.should have_content('my first article')
   end
 
   scenario 'test access to category' do
     find('a', text: 'new article').click
-    @text = "1234qwerasdf"*20
+    @text = '1234qwerasdf' * 20
     fill_in 'title', with: 'my first article'
     fill_in 'text', with: @text
     page.attach_file('image', File.expand_path('./app/assets/images/screenshot.png'))
-    find("#checkbox1").click
+    find('#checkbox1').click
     click_button 'Submit'
     find('a', text: 'health').click
     page.should have_content('1234qwerasdf')
@@ -75,13 +75,13 @@ RSpec.describe 'index page', type: :feature do
 
   scenario 'vote article' do
     find('a', text: 'new article').click
-    @text = "1234qwerasdf"*20
+    @text = '1234qwerasdf' * 20
     fill_in 'title', with: 'my first article user1'
     fill_in 'text', with: @text
     page.attach_file('image', File.expand_path('./app/assets/images/screenshot.png'))
-    find("#checkbox1").click
+    find('#checkbox1').click
     click_button 'Submit'
-    article = Article.all.find_by_title("my first article user1")
+    article = Article.all.find_by_title('my first article user1')
     find('a', text: 'health').click
     find("#article#{article.id}").click
     page.should have_content('1234qwerasdf')
@@ -89,13 +89,13 @@ RSpec.describe 'index page', type: :feature do
 
   scenario 'test vote article' do
     find('a', text: 'new article').click
-    @text = "1234qwerasdf"*20
+    @text = '1234qwerasdf' * 20
     fill_in 'title', with: 'my first article user1'
     fill_in 'text', with: @text
     page.attach_file('image', File.expand_path('./app/assets/images/screenshot.png'))
-    find("#checkbox1").click
+    find('#checkbox1').click
     click_button 'Submit'
-    article = Article.all.find_by_title("my first article user1")
+    article = Article.all.find_by_title('my first article user1')
     find('a', text: 'health').click
     find("#article#{article.id}").click
     click_button 'vote'
@@ -104,11 +104,11 @@ RSpec.describe 'index page', type: :feature do
 
   scenario 'test link to most popular article' do
     find('a', text: 'new article').click
-    @text = "1234qwerasdf"*20
+    @text = '1234qwerasdf' * 20
     fill_in 'title', with: 'my first article'
     fill_in 'text', with: @text
     page.attach_file('image', File.expand_path('./app/assets/images/screenshot.png'))
-    find("#checkbox1").click
+    find('#checkbox1').click
     click_button 'Submit'
     find('a', text: 'Read More').click
     page.should have_content('1234qwerasdf')
