@@ -1,6 +1,4 @@
 class Article < ApplicationRecord
-  # include Rails.application.routes.url_helpers
-  # before_save :save_url
   belongs_to :user
   has_one_attached :image
   has_many :votes
@@ -13,8 +11,4 @@ class Article < ApplicationRecord
   def total_votes
     votes.length
   end
-
-  # def save_url
-  #     self.picture = rails_blob_url(self.image, only_path: true)
-  # end
 end

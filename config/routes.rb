@@ -1,15 +1,7 @@
 Rails.application.routes.draw do
   get 'categories/show'
   get 'categories/index'
-  #get 'users/create'
-  #get 'users/new'
-  #get 'articles/create'
-  #get 'articles/new'
-  #get 'users/new'
-  #get 'posts/show'
-  #get 'sessions/new'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root   'articles#index'
+ root   'articles#index'
   get    '/login',   to: 'sessions#new'
   post '/login' => 'sessions#create'
   get    '/signup',   to: 'users#new'
@@ -20,5 +12,4 @@ Rails.application.routes.draw do
   get '/show_article',  to: 'articles#show'
   post '/show_article',  to: 'articles#show'
   get '/by_category',  to: 'categories#show'
-  # post '/update_vote' => 'articles#show'
 end

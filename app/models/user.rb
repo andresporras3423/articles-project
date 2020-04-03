@@ -3,7 +3,6 @@ class User < ApplicationRecord
   has_many :votes
   has_many :voteds, through: :votes, source: :articles
   before_validation :record_signup, on: :create
-  # before_create :record_signup
   before_save { self.email = email.downcase }
   validates :name, presence: true, length: { maximum: 50 }, uniqueness: true
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
@@ -19,7 +18,6 @@ class User < ApplicationRecord
   end
   has_many :posts
 
-  # Returns true if the given token matches the digest.
   def authenticated?(remember_token)
     self.remember_token == remember_token
   end
