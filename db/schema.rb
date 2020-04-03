@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_02_120436) do
+ActiveRecord::Schema.define(version: 2020_04_03_174111) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2020_04_02_120436) do
     t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id", "article_id"], name: "index_article_categories_on_category_id_and_article_id", unique: true
   end
 
   create_table "articles", force: :cascade do |t|
@@ -74,6 +75,7 @@ ActiveRecord::Schema.define(version: 2020_04_02_120436) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "article_id"
     t.integer "user_id"
+    t.index ["user_id", "article_id"], name: "index_votes_on_user_id_and_article_id", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
