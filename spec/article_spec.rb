@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Article, type: :model do
   context 'article model creation' do
-    let(:u1){User.create(name: 'Oscar2', email: 'q2@q.com', password: '12345678', password_confirmation: '12345678')}
-    let(:text){'1234567890' * 20}
-    let(:a1){Article.new(title: 'test article', text: text, user_id: u1.id, picture: '/example.jpg')}
+    let(:u1) { User.create(name: 'Oscar2', email: 'q2@q.com', password: '12345678', password_confirmation: '12345678') }
+    let(:text) { '1234567890' * 20 }
+    let(:a1) { Article.new(title: 'test article', text: text, user_id: u1.id, picture: '/example.jpg') }
     before(:each) do
       u1.save
       a1.save

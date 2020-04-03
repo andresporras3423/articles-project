@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Category, type: :model do
   context 'category model creation' do
-    let(:c1) {Category.new(name: 'sports', priority: 500)}
+    let(:c1) { Category.new(name: 'sports', priority: 500) }
     before(:each) do
       c1.save
     end

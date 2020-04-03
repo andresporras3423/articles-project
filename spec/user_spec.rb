@@ -1,9 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  
   context 'user model creation' do
-    let(:u1){User.create(name: 'Oscar', email: 'q@q.com', password: '12345678', password_confirmation: '12345678')}
+    let(:u1) { User.create(name: 'Oscar', email: 'q@q.com', password: '12345678', password_confirmation: '12345678') }
     before(:each) do
       u1.save
     end

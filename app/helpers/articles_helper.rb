@@ -4,22 +4,22 @@ module ArticlesHelper
   end
 
   def recent_articles_by_category
-    articles = Article.all
     categories = Category.order(:priority)
     article_by_category = []
-    categories.includes(:articles).each{|c| article_by_category.push([c, c.articles.max_by {|a| a.created_at}])}
-    sol=[]
-    article_by_category.each do |ac| 
-      unless ac[1].nil?
-        sol.push(
-        {'name'=>ac[0].name, 
-        'category_id'=>ac[0].id, 
-        'priority' => ac[0].priority,
-        'id' => ac[1].id,  
-        'title' => ac[1].title, 
-        'text' => ac[1].text, 
-        'picture' => ac[1].picture})
-      end
+    categories.includes(:articles).each { |c| article_by_category.push([c, c.articles.max_by(&:created_at)]) }
+    sol = []
+    article_by_category.each do |ac|
+      next if ac[1].nil?
+
+      sol.push(
+        { 'name' => ac[0].name,
+          'category_id' => ac[0].id,
+          'priority' => ac[0].priority,
+          'id' => ac[1].id,
+          'title' => ac[1].title,
+          'text' => ac[1].text,
+          'picture' => ac[1].picture }
+      )
     end
     sol
   end

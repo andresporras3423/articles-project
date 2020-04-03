@@ -1,13 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Vote, type: :model do
-  
   context 'vote model creation' do
-    let(:u1) { User.create(name: 'Oscar', email: 'q@q.com', password: '12345678', password_confirmation: '12345678')}
-    let(:text) {'1234567890' * 20}
-    let(:a1) {Article.new(title: 'test article', text: text, user_id: u1.id, picture: '/example.jpg')}
-    let(:v1) { Vote.new(user_id: u1.id, article_id: a1.id)}
-    before(:each) do 
+    let(:u1) { User.create(name: 'Oscar', email: 'q@q.com', password: '12345678', password_confirmation: '12345678') }
+    let(:text) { '1234567890' * 20 }
+    let(:a1) { Article.new(title: 'test article', text: text, user_id: u1.id, picture: '/example.jpg') }
+    let(:v1) { Vote.new(user_id: u1.id, article_id: a1.id) }
+    before(:each) do
       u1.save
       a1.save
       v1.save
