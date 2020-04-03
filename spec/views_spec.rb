@@ -13,6 +13,7 @@ RSpec.describe 'index page', type: :feature do
 
     @c1 = Category.new(name: 'health', priority: 1)
     @c1.save
+
     @c2 = Category.new(name: 'sport', priority: 2)
     @c2.save
   end
@@ -29,13 +30,13 @@ RSpec.describe 'index page', type: :feature do
     visit '/'
     expect(page).to have_content('Login')
   end
-  scenario 'visit sign up page' do
+  scenario 'sign up page' do
     find('a', text: 'Logout').click
     visit '/signup'
     expect(page).to have_content('Password confirmation:')
   end
 
-  scenario 'test signup event' do
+  scenario 'signup event' do
     find('a', text: 'Logout').click
     visit '/signup'
     fill_in 'name', with: 'fernando'
@@ -46,11 +47,11 @@ RSpec.describe 'index page', type: :feature do
     page.should have_content('Sign In')
   end
 
-  scenario 'test login event' do
+  scenario 'login event' do
     page.should have_content('Signed in as user1')
   end
 
-  scenario 'test post event' do
+  scenario 'post event' do
     find('a', text: 'new article').click
     @text = '1234qwerasdf' * 20
     fill_in 'title', with: 'my first article'
@@ -61,7 +62,7 @@ RSpec.describe 'index page', type: :feature do
     page.should have_content('my first article')
   end
 
-  scenario 'test access to category' do
+  scenario 'access to category' do
     find('a', text: 'new article').click
     @text = '1234qwerasdf' * 20
     fill_in 'title', with: 'my first article'
@@ -87,7 +88,7 @@ RSpec.describe 'index page', type: :feature do
     page.should have_content('1234qwerasdf')
   end
 
-  scenario 'test vote article' do
+  scenario 'vote article' do
     find('a', text: 'new article').click
     @text = '1234qwerasdf' * 20
     fill_in 'title', with: 'my first article user1'
@@ -102,7 +103,7 @@ RSpec.describe 'index page', type: :feature do
     page.should have_content('total votes: 1')
   end
 
-  scenario 'test link to most popular article' do
+  scenario 'link to most popular article' do
     find('a', text: 'new article').click
     @text = '1234qwerasdf' * 20
     fill_in 'title', with: 'my first article'
