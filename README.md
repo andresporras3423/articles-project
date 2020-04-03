@@ -6,7 +6,7 @@ Ruby on Rails Microverse Capstone Project By Oscar Russi
 
 # live demo
 
-[Live Demo](https://blueberry-custard-86240.herokuapp.com/login)
+[Live Demo](https://blueberry-custard-86240.herokuapp.com)
 
 ## Project Presentation (Video)
 
