@@ -41,9 +41,9 @@ Ruby on Rails Microverse Capstone Project By Oscar Russi
 - Install ruby on rails
 - Install bundle
 - Run "bundle install" inside folder
-- Run "rails server" inside folder
-- Run "rails db:migrations"
+- Run "rails db:migrate"
 - Run "rails db:seed"
+- Run "rails server" inside folder
 - Go to http://127.0.0.1:3000/
 * OPTIONAL:
 - Run "rspec" for running the tests
