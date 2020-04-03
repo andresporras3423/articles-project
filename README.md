@@ -40,6 +40,7 @@ Ruby on Rails Microverse Capstone Project By Oscar Russi
 - Install ruby
 - Install ruby on rails
 - Install bundle
+- download this project
 - Run "bundle install" inside folder
 - Run "rails db:migrate"
 - Run "rails db:seed"
