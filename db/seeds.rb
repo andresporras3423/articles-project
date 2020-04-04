@@ -9,9 +9,7 @@ category1 = Category.new(name: 'History', priority: 1)
 category2 = Category.new(name: 'Technology', priority: 2)
 category3 = Category.new(name: 'Music', priority: 3)
 category4 = Category.new(name: 'Movies', priority: 4)
-category5 = Category.new(name: 'Health', priority: 5)
 category1.save unless category1.valid? == false
 category2.save unless category2.valid? == false
 category3.save unless category3.valid? == false
 category4.save unless category4.valid? == false
-category5.save unless category5.valid? == false
