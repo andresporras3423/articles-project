@@ -1,0 +1,34 @@
+<div class="row full-article">
+  <div class="show-article col-9">
+  <div class="full-title">
+  <h1><%=@article.title%></h1>
+</div>
+<div class="image-article" style="background-image: url(<%=@article.picture%>)">
+</div>
+<%@article.text.split("\r\n").each do |paragraph|%>
+<p><%=paragraph%></p>
+<%end%>
+</div>
+<div class="full-article-info col-3">
+<p>
+<strong>categories:</strong> 
+<%@article.categories.each_with_index do |c, i|%>
+  <%= link_to c.name, "/by_category?id=#{c.id}", class: "link-color" %>
+  <%=(i==(@article.categories.length-1) ? '' : ', ')%>
+<%end%>
+</p>
+<p>
+<strong>total votes:</strong> <%=@article.votes.length%>
+</p>
+<%= form_tag "/show_article?id=#{@article.id}" do %>
+<%unless current_user.nil?%>
+<%if @article.voters.include?(current_user)%>
+<%= submit_tag "", :value => "unvote", :name => "unvote", class: "btn-primary btn-vote" %>
+<%else%>
+<%= submit_tag "", :value => "vote", :name => "vote", class: "btn-primary btn-vote" %>
+<%end%>
+<% end %>
+<%end%>
+
+</div>
+</div>

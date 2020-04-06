@@ -1,0 +1,18 @@
+<article class="main-article-container">
+  <%unless @most_voted_article.nil?%>
+    <div class="main-article" style="background-image: url(<%=@most_voted_article.picture%>)">
+      <h3><%=@most_voted_article.title%></h3>
+      <p><%=(@most_voted_article.text[0,150]+'...') %></p>
+      <%= link_to "Read More", "/show_article?id=#{@most_voted_article.id}" %> 
+    </div>
+  <%end%>
+</article>
+
+<div class="categories-container">
+  <%@recent_articles_by_category.each do |most_recent_article|%>
+    <div class="by-category"  style="background-image: url(<%=most_recent_article["picture"] %>)">
+      <span><%= link_to most_recent_article["name"], "/by_category?id=#{most_recent_article["category_id"]}" %></span>
+      <h4><%=most_recent_article["title"]%></h4>
+    </div>
+  <%end%>
+</div>
