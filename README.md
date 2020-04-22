@@ -57,6 +57,10 @@ Ruby on Rails Microverse Capstone Project By Oscar Russi
 
 To run the automated tests, type "rspec" command from the terminal end press enter. You must be inside the project folder.
 
+## Planned Features
+
+https://github.com/andresporras3423/articles-project/issues
+
 ## Authors
 
 **Oscar Russi**
