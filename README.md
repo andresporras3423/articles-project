@@ -55,7 +55,7 @@ Ruby on Rails Microverse Capstone Project By Oscar Russi
 
 ## Running tests
 
-To run the automated test run "rspec".  You must be inside the project folder
+To run the automated tests run "rspec". You must be inside the project folder.
 
 ## Authors
 
