@@ -2,6 +2,10 @@
 
 Ruby on Rails Microverse Capstone Project By Oscar Russi
 
+## Usage
+
+This project has the basic features of the article posting websites 
+
 ![screenshot](./app/assets/images/screenshot.png)
 
 # live demo
