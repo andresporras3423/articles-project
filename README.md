@@ -53,6 +53,10 @@ Ruby on Rails Microverse Capstone Project By Oscar Russi
 
 #### and deployed to GitHub
 
+## Running tests
+
+To run the automated test run "rspec".  You must be inside the project folder
+
 ## Authors
 
 **Oscar Russi**
