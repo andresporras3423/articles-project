@@ -12,7 +12,9 @@ This project has the basic features of the article posting websites
 
 [Live Demo](https://blueberry-custard-86240.herokuapp.com)
 
-## Project Presentation (Video)
+## Project Presentation (VIDEO)
+
+[![Project presentation](./app/assets/images/video-screenshot.png)](https://www.loom.com/share/f8e24c7dbe3b42a9b6872b88d4d1fed1)
 
 [Project Presentation](https://www.loom.com/share/f8e24c7dbe3b42a9b6872b88d4d1fed1)
 
@@ -37,6 +39,8 @@ This project has the basic features of the article posting websites
 - Using active storage to save images of the articles
 - saving the URL of the image in the attribute "picture" to avoid n+1 queries
 - Using includes() to avoid n+1 queries
+
+![screenshot](./app/assets/images/code-screenshot.png)
 
 
 # How to run this project
